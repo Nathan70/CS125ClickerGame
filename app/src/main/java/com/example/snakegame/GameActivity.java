@@ -22,10 +22,14 @@ public class GameActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_game);
+
+        /** sets default score of 0 and updates based on game */
+        String gameScore = String.valueOf(score);
+        TextView updateScore = findViewById(R.id.currentScore);
+        updateScore.setText(gameScore);
     }
 
     private void eat() {
         score++;
-
     }
 }
