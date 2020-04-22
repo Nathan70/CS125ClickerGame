@@ -2,6 +2,7 @@ package com.example.snakegame.logic;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Random;
 
 public class Game {
 
@@ -64,8 +65,19 @@ public class Game {
 
     /** eat a target*/
     private void eat() {
-        score++;
+        Random random = new Random();
         // Randomize next target Position
+        int x = random.nextInt(range);
+        int y = random.nextInt(range);
+        int[] point = {x, y};
+        for (int i = 0; i < path.size(); i++) {
+            if (point[0] == path.get(i)[0] && point[1] == path.get(i)[1]) {
+                eat();
+            }
+        }
+        targetPosition = point;
+        // visual position of target change
+        score++;
     }
 
     /** you lose game, game over*/
