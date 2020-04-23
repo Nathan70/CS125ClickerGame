@@ -54,8 +54,17 @@ public class Game {
         return score;
     }
 
+    /** hi */
+
+    class runMove extends TimerTask {
+
+        @Override
+        public void run() {
+            move(facing);
+        }
+    }
     /** moving */
-    public void move(int direction) {
+    private void move(int direction) {
         int[] claim = path.get(path.size() - 1);
         if (direction == Direction.up) {
             claim[1]++;
@@ -101,6 +110,8 @@ public class Game {
 
     /** you lose game, game over*/
     private void gameOver() {
+        gameState = GameStateID.ENDED;
+        timer.cancel();
         //You lose message, brings up score
     }
 
@@ -108,9 +119,7 @@ public class Game {
     public void togglePause() {
         if (gameState == GameStateID.PAUSED) {
             gameState = GameStateID.RUNNING;
-            TimerTask moveOne;
-            //moveOne.run();
-            //timer.schedule(moveOne, 1000, 500);
+            timer.schedule(new runMove(), 1000, 250);
         } else if (gameState == GameStateID.RUNNING) {
             gameState = GameStateID.PAUSED;
             timer.purge();
