@@ -4,6 +4,7 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Random;
 import java.util.Timer;
+import java.util.TimerTask;
 
 public class Game {
 
@@ -107,7 +108,9 @@ public class Game {
     public void togglePause() {
         if (gameState == GameStateID.PAUSED) {
             gameState = GameStateID.RUNNING;
-            //timer.schedule(move(facing), 1000, 500);
+            TimerTask moveOne;
+            //moveOne.run();
+            //timer.schedule(moveOne, 1000, 500);
         } else if (gameState == GameStateID.RUNNING) {
             gameState = GameStateID.PAUSED;
             timer.purge();

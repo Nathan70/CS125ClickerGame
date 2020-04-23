@@ -14,13 +14,6 @@ public class MainActivity extends AppCompatActivity {
 
     /** game */
     private Game game;
-
-    /** button to play the game. */
-    private Button playButton;
-
-    /** switch for big **/
-    private Switch bigSwitch;
-
     /** big state */
     private boolean big;
 
@@ -29,16 +22,10 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        /** implement switch **/
-        bigSwitch = findViewById(R.id.bigSwitch);
-        if (bigSwitch.isChecked()) {
-            big = true;
-        } else {
-            big = false;
-        }
+        Switch bigSwitch = findViewById(R.id.bigSwitch);
+        big = bigSwitch.isChecked();
 
-        /** implement play button */
-        playButton = findViewById(R.id.playButton);
+        Button playButton = findViewById(R.id.playButton);
         playButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
