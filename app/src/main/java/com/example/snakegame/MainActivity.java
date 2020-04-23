@@ -12,6 +12,9 @@ import com.example.snakegame.logic.Game;
 
 public class MainActivity extends AppCompatActivity {
 
+    /** game */
+    private Game game;
+
     /** button to play the game. */
     private Button playButton;
 
@@ -29,7 +32,9 @@ public class MainActivity extends AppCompatActivity {
         /** implement switch **/
         bigSwitch = findViewById(R.id.bigSwitch);
         if (bigSwitch.isChecked()) {
-            Game game = new Game(big);
+            big = true;
+        } else {
+            big = false;
         }
 
         /** implement play button */
@@ -37,16 +42,8 @@ public class MainActivity extends AppCompatActivity {
         playButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                openGameActivity();
+                game = new Game(big);
             }
         });
-
-
-    }
-
-    /** switches screen to game activity */
-    public void openGameActivity() {
-        Intent intent = new Intent(this, GameActivity.class);
-        startActivity(intent);
     }
 }
