@@ -3,6 +3,7 @@ package com.example.snakegame.logic;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Random;
+import java.util.Timer;
 
 public class Game {
 
@@ -20,6 +21,12 @@ public class Game {
 
     /** position of target*/
     private int[] targetPosition;
+
+    /** timer */
+    private Timer timer;
+
+    /** direction snake is currently facing*/
+    private int facing = Direction.right;
 
 
     public Game(boolean big) {
@@ -100,8 +107,10 @@ public class Game {
     public void togglePause() {
         if (gameState == GameStateID.PAUSED) {
             gameState = GameStateID.RUNNING;
+            //timer.schedule(move(facing), 1000, 500);
         } else if (gameState == GameStateID.RUNNING) {
             gameState = GameStateID.PAUSED;
+            timer.purge();
         }
     }
 }
