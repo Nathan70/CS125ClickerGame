@@ -36,7 +36,7 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="161dp"
         android:layout_marginLeft="161dp"
-        android:layout_marginTop="140dp"
+        android:layout_marginTop="116dp"
         android:layout_marginEnd="162dp"
         android:layout_marginRight="162dp"
         android:background="#FFFFFF"
@@ -57,5 +57,18 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:srcCompat="@drawable/snake_main" />
+
+    <Switch
+        android:id="@+id/gameSize"
+        android:layout_width="66dp"
+        android:layout_height="27dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginEnd="172dp"
+        android:layout_marginRight="172dp"
+        android:background="#00FFFFFF"
+        android:text="@string/big"
+        android:textSize="18sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/playButton" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
