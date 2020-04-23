@@ -12,6 +12,9 @@ public class MainActivity extends AppCompatActivity {
     /** button to play the game. */
     private Button playButton;
 
+    /** big state */
+    private boolean big;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);

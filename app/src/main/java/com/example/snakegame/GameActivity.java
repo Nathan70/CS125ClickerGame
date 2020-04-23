@@ -13,9 +13,6 @@ import com.example.snakegame.logic.GameStateID;
 
 public class GameActivity extends AppCompatActivity {
 
-    /** game state. */
-    private int gameState = GameStateID.PAUSED;
-
     /** game */
     private Game game;
 
@@ -25,7 +22,7 @@ public class GameActivity extends AppCompatActivity {
         setContentView(R.layout.activity_game);
 
         /** sets default score of 0 and updates based on game */
-        Game temp = new Game(true);
+        Game game = new Game(true);
         String gameScore = String.valueOf(game.getScore());
         TextView updateScore = findViewById(R.id.currentScore);
         updateScore.setText(gameScore);

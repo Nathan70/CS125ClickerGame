@@ -6,6 +6,9 @@ import java.util.Random;
 
 public class Game {
 
+    /** game state */
+    private int gameState;
+
     /** score */
     private int score;
 
@@ -20,6 +23,7 @@ public class Game {
 
 
     public Game(boolean big) {
+        gameState = GameStateID.PAUSED;
         if (big) {
             range = InitialPositions.bigRange;
             path.add(InitialPositions.bigFirst);
@@ -92,4 +96,12 @@ public class Game {
         //You lose message, brings up score
     }
 
+    /** toggle gameState*/
+    public void togglePause() {
+        if (gameState == GameStateID.PAUSED) {
+            gameState = GameStateID.RUNNING;
+        } else if (gameState == GameStateID.RUNNING) {
+            gameState = GameStateID.PAUSED;
+        }
+    }
 }
