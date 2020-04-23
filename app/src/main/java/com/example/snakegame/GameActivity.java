@@ -8,6 +8,7 @@ import android.widget.Button;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.example.snakegame.logic.Game;
 import com.example.snakegame.logic.GameStateID;
 
 public class GameActivity extends AppCompatActivity {
@@ -15,8 +16,8 @@ public class GameActivity extends AppCompatActivity {
     /** game state. */
     private int gameState = GameStateID.PAUSED;
 
-    /** score */
-    private int score = 0;
+    /** game */
+    private Game game;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -24,12 +25,9 @@ public class GameActivity extends AppCompatActivity {
         setContentView(R.layout.activity_game);
 
         /** sets default score of 0 and updates based on game */
-        String gameScore = String.valueOf(score);
+        Game temp = new Game(true);
+        String gameScore = String.valueOf(game.getScore());
         TextView updateScore = findViewById(R.id.currentScore);
         updateScore.setText(gameScore);
-    }
-
-    private void eat() {
-        score++;
     }
 }

@@ -26,13 +26,20 @@ public class Game {
             path.add(InitialPositions.bigSecond);
             path.add(InitialPositions.bigThird);
             targetPosition = InitialPositions.bigGoal;
+            //render positions of snake, grid, etc on ui
         } else {
             range = InitialPositions.smallRange;
             path.add(InitialPositions.smallFirst);
             path.add(InitialPositions.smallSecond);
             path.add(InitialPositions.smallThird);
             targetPosition = InitialPositions.smallGoal;
+            //render positions of snake, grid, etc on ui
         }
+    }
+
+    /** get score*/
+    public int getScore() {
+        return score;
     }
 
     /** moving */
