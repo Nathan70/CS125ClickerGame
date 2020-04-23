@@ -59,13 +59,14 @@
         app:srcCompat="@drawable/snake_main" />
 
     <Switch
-        android:id="@+id/gameSize"
+        android:id="@+id/bigSwitch"
         android:layout_width="66dp"
         android:layout_height="27dp"
         android:layout_marginTop="20dp"
         android:layout_marginEnd="172dp"
         android:layout_marginRight="172dp"
         android:background="#00FFFFFF"
+        android:checked="false"
         android:text="@string/big"
         android:textSize="18sp"
         app:layout_constraintEnd_toEndOf="parent"
