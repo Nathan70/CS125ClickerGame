@@ -1,9 +1,5 @@
 package com.example.snakegame.logic;
 
-import androidx.appcompat.app.AlertDialog;
-
-import com.example.snakegame.NewGameActivity;
-
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Random;
@@ -116,12 +112,14 @@ public class Game {
     private void gameOver() {
         gameState = GameStateID.ENDED;
         timer.cancel();
+        //NewGameActivity.endGame();
         //You lose message, brings up score
     }
 
     /** turn the snake, direction facing */
     public void turn(int toFace) {
         facing = toFace;
+        //visual indicator of direction facing change
     }
 
     /** toggle gameState between RUNNING and PAUSED*/
