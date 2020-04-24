@@ -30,7 +30,13 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 game = new Game(big);
+                openGameActivity();
             }
         });
+    }
+
+    public void openGameActivity() {
+        Intent intent = new Intent(this, GameActivity.class);
+        startActivity(intent);
     }
 }
