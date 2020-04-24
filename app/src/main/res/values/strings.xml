@@ -3,6 +3,10 @@
     <string name="snake_game">Snake Game</string>
     <string name="play">Play</string>
     <string name="score">Score:</string>
-    <string name="defaultScore">0</string>
     <string name="big">Big</string>
+    <string name="up">up</string>
+    <string name="down">down</string>
+    <string name="right">right</string>
+    <string name="left">left</string>
+    <string name="updateScore">0</string>
 </resources>
