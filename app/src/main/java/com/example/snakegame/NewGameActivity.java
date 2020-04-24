@@ -9,6 +9,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageButton;
+import android.widget.TextView;
 
 import com.example.snakegame.logic.Direction;
 import com.example.snakegame.logic.Game;
@@ -91,5 +92,12 @@ public class NewGameActivity extends AppCompatActivity {
         Intent intent = new Intent(this, MainActivity.class);
         startActivity(intent);
         return null;
+    }
+
+    private void updateScore() {
+        int currentScore = game.getScore();
+        String update = String.valueOf(currentScore);
+        TextView scoreText = findViewById(R.id.updateScore);
+        scoreText.setText(update);
     }
 }
