@@ -8,7 +8,9 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.ImageButton;
 
+import com.example.snakegame.logic.Direction;
 import com.example.snakegame.logic.Game;
 
 public class NewGameActivity extends AppCompatActivity {
@@ -22,18 +24,46 @@ public class NewGameActivity extends AppCompatActivity {
         setContentView(R.layout.activity_new_game);
 
         game = new Game(MainActivity.getBig());
-        Button pauseButton = findViewById(R.id.pauseButton);
+        ImageButton pauseButton = findViewById(R.id.pauseButton);
         pauseButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 game.togglePause();
             }
         });
-        Button quitButton = findViewById(1);
+        ImageButton quitButton = findViewById(R.id.endButton);
         quitButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 quitCheck();
+            }
+        });
+        Button upButton = findViewById(R.id.upButton);
+        upButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                game.turn(Direction.up);
+            }
+        });
+        Button rightButton = findViewById(R.id.rightButton);
+        rightButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                game.turn(Direction.up);
+            }
+        });
+        Button downButton = findViewById(R.id.downButton);
+        downButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                game.turn(Direction.up);
+            }
+        });
+        Button leftButton = findViewById(R.id.leftButton);
+        leftButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                game.turn(Direction.up);
             }
         });
     }
