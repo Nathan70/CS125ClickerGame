@@ -12,10 +12,8 @@ import com.example.snakegame.logic.Game;
 
 public class MainActivity extends AppCompatActivity {
 
-    /** game */
-    private Game game;
     /** big state */
-    private boolean big;
+    private static boolean big;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -29,7 +27,6 @@ public class MainActivity extends AppCompatActivity {
         playButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                game = new Game(big);
                 openGameActivity();
             }
         });
@@ -38,5 +35,9 @@ public class MainActivity extends AppCompatActivity {
     public void openGameActivity() {
         Intent intent = new Intent(this, GameActivity.class);
         startActivity(intent);
+    }
+
+    public boolean getBig() {
+        return big;
     }
 }

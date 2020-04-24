@@ -115,7 +115,7 @@ public class Game {
         //You lose message, brings up score
     }
 
-    /** toggle gameState*/
+    /** toggle gameState between RUNNING and PAUSED*/
     public void togglePause() {
         if (gameState == GameStateID.PAUSED) {
             gameState = GameStateID.RUNNING;
