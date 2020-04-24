@@ -49,21 +49,21 @@ public class NewGameActivity extends AppCompatActivity {
         rightButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                game.turn(Direction.up);
+                game.turn(Direction.right);
             }
         });
         Button downButton = findViewById(R.id.downButton);
         downButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                game.turn(Direction.up);
+                game.turn(Direction.down);
             }
         });
         Button leftButton = findViewById(R.id.leftButton);
         leftButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                game.turn(Direction.up);
+                game.turn(Direction.left);
             }
         });
     }
