@@ -95,9 +95,7 @@ public class NewGameActivity extends AppCompatActivity {
     }
 
     private void updateScore() {
-        int currentScore = game.getScore();
-        String update = String.valueOf(currentScore);
         TextView scoreText = findViewById(R.id.updateScore);
-        scoreText.setText(update);
+        scoreText.setText(String.valueOf(game.getScore()));
     }
 }
