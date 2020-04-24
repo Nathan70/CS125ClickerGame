@@ -8,8 +8,6 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.Switch;
 
-import com.example.snakegame.logic.Game;
-
 public class MainActivity extends AppCompatActivity {
 
     /** big state */
@@ -33,11 +31,11 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void openGameActivity() {
-        Intent intent = new Intent(this, GameActivity.class);
+        Intent intent = new Intent(this, NewGameActivity.class);
         startActivity(intent);
     }
 
-    public boolean getBig() {
+    public static boolean getBig() {
         return big;
     }
 }

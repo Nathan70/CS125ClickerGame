@@ -115,6 +115,11 @@ public class Game {
         //You lose message, brings up score
     }
 
+    /** turn the snake, direction facing */
+    public void turn(int toFace) {
+        facing = toFace;
+    }
+
     /** toggle gameState between RUNNING and PAUSED*/
     public void togglePause() {
         if (gameState == GameStateID.PAUSED) {
