@@ -9,4 +9,6 @@
     <string name="right">right</string>
     <string name="left">left</string>
     <string name="updateScore">0</string>
+    <string name="pause">pause</string>
+    <string name="end">end</string>
 </resources>
