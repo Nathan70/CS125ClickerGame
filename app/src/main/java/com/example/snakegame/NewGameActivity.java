@@ -19,6 +19,9 @@ public class NewGameActivity extends AppCompatActivity {
     /** instance of Game*/
     Game game;
 
+    /** something */
+    TextView scoreText;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -95,7 +98,6 @@ public class NewGameActivity extends AppCompatActivity {
     }
 
     private void updateScore() {
-        TextView scoreText = findViewById(R.id.updateScore);
         scoreText.setText(String.valueOf(game.getScore()));
     }
 }
