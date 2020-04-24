@@ -20,7 +20,7 @@ public class NewGameActivity extends AppCompatActivity {
     Game game;
 
     /** something */
-    TextView scoreText;
+    TextView scoreText = findViewById(R.id.updateScore);
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
