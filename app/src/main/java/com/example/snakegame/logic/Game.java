@@ -1,5 +1,9 @@
 package com.example.snakegame.logic;
 
+import androidx.appcompat.app.AlertDialog;
+
+import com.example.snakegame.NewGameActivity;
+
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Random;
