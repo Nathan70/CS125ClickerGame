@@ -23,30 +23,47 @@ import java.util.TimerTask;
 
 public class NewGameActivity extends AppCompatActivity {
 
-    /** something */
-    TextView scoreText = findViewById(R.id.updateScore);
+    /**
+     * something
+     */
+    TextView scoreText;
+
+    //MARKER
 
 
-
-    /** game state */
+    /**
+     * game state
+     */
     private int gameState;
 
-    /** score */
+    /**
+     * score
+     */
     private int score;
 
-    /** range */
+    /**
+     * range
+     */
     private int range;
 
-    /** path */
+    /**
+     * path
+     */
     private List<int[]> path = new ArrayList<>();
 
-    /** position of target*/
+    /**
+     * position of target
+     */
     private int[] targetPosition;
 
-    /** timer */
+    /**
+     * timer
+     */
     private Timer timer = new Timer();
 
-    /** direction snake is currently facing*/
+    /**
+     * direction snake is currently facing
+     */
     private int facing = Direction.right;
 
 
@@ -55,7 +72,7 @@ public class NewGameActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_new_game);
 
-        scoreText.setText("0");
+        //scoreText.setText("0");
         ImageButton pauseButton = findViewById(R.id.pauseButton);
         pauseButton.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -65,38 +82,38 @@ public class NewGameActivity extends AppCompatActivity {
         });
         ImageButton quitButton = findViewById(R.id.endButton);
         quitButton.setOnClickListener(new View.OnClickListener() {
-        @Override
-        public void onClick(View view) {
-        quitCheck();
-        }
+            @Override
+            public void onClick(View view) {
+                quitCheck();
+            }
         });
         Button upButton = findViewById(R.id.upButton);
         upButton.setOnClickListener(new View.OnClickListener() {
-        @Override
-        public void onClick(View view) {
-        turn(Direction.up);
-        }
+            @Override
+            public void onClick(View view) {
+                turn(Direction.up);
+            }
         });
         Button rightButton = findViewById(R.id.rightButton);
         rightButton.setOnClickListener(new View.OnClickListener() {
-        @Override
-        public void onClick(View view) {
-        turn(Direction.right);
-        }
+            @Override
+            public void onClick(View view) {
+                turn(Direction.right);
+            }
         });
         Button downButton = findViewById(R.id.downButton);
         downButton.setOnClickListener(new View.OnClickListener() {
-        @Override
-        public void onClick(View view) {
-        turn(Direction.down);
-        }
+            @Override
+            public void onClick(View view) {
+                turn(Direction.down);
+            }
         });
         Button leftButton = findViewById(R.id.leftButton);
         leftButton.setOnClickListener(new View.OnClickListener() {
-        @Override
-        public void onClick(View view) {
-        turn(Direction.left);
-        }
+            @Override
+            public void onClick(View view) {
+                turn(Direction.left);
+            }
         });
         gameState = GameStateID.PAUSED;
         if (MainActivity.getBig()) {
@@ -116,16 +133,20 @@ public class NewGameActivity extends AppCompatActivity {
         }
     }
 
-    /** popup dialogue asking if you are sure you want to quit*/
+    /**
+     * popup dialogue asking if you are sure you want to quit
+     */
     private void quitCheck() {
         AlertDialog.Builder builder = new AlertDialog.Builder(this);
         builder.setMessage("Are you sure you want to Quit?");
-        builder.setPositiveButton("Yes", endGame());
         builder.setNegativeButton("No", null);
+        builder.setPositiveButton("Yes", endGame());
         builder.create().show();
     }
 
-    /** what happens when you die or after you confirm you want to quit */
+    /**
+     * what happens when you die or after you confirm you want to quit
+     */
     private DialogInterface.OnClickListener endGame() {
         AlertDialog.Builder builder = new AlertDialog.Builder(this);
         builder.setMessage("Game Over. Score: " + score);
@@ -134,7 +155,9 @@ public class NewGameActivity extends AppCompatActivity {
         return null;
     }
 
-    /** return to Main Menu where you can set size and create a new game*/
+    /**
+     * return to Main Menu where you can set size and create a new game
+     */
     private DialogInterface.OnClickListener mainMenu() {
         Intent intent = new Intent(this, MainActivity.class);
         startActivity(intent);
@@ -142,14 +165,12 @@ public class NewGameActivity extends AppCompatActivity {
     }
 
 
-
-
-
     //MARKER
 
 
-
-    /** hi */
+    /**
+     * hi
+     */
     class runMove extends TimerTask {
 
         @Override
@@ -157,7 +178,10 @@ public class NewGameActivity extends AppCompatActivity {
             move(facing);
         }
     }
-    /** moving */
+
+    /**
+     * moving
+     */
     private void move(int direction) {
         int[] claim = path.get(path.size() - 1);
         if (direction == Direction.up) {
@@ -185,7 +209,9 @@ public class NewGameActivity extends AppCompatActivity {
         }
     }
 
-    /** eat a target*/
+    /**
+     * eat a target
+     */
     private void eat() {
         Random random = new Random();
         // Randomize next target Position
@@ -203,7 +229,9 @@ public class NewGameActivity extends AppCompatActivity {
         scoreText.setText(String.valueOf(score));
     }
 
-    /** you lose game, game over*/
+    /**
+     * you lose game, game over
+     */
     private void gameOver() {
         gameState = GameStateID.ENDED;
         timer.cancel();
@@ -211,7 +239,9 @@ public class NewGameActivity extends AppCompatActivity {
         //You lose message, brings up score
     }
 
-    /** turn the snake, direction facing */
+    /**
+     * turn the snake, direction facing
+     */
     public void turn(int toFace) {
         if (gameState == GameStateID.RUNNING) {
             facing = toFace;
@@ -219,7 +249,9 @@ public class NewGameActivity extends AppCompatActivity {
         //visual indicator of direction facing change
     }
 
-    /** toggle gameState between RUNNING and PAUSED*/
+    /**
+     * toggle gameState between RUNNING and PAUSED
+     */
     public void togglePause() {
         if (gameState == GameStateID.PAUSED) {
             gameState = GameStateID.RUNNING;
