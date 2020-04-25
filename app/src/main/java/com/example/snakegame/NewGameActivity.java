@@ -63,59 +63,58 @@ public class NewGameActivity extends AppCompatActivity {
                 togglePause();
             }
         });
-        /**
-         ImageButton quitButton = findViewById(R.id.endButton);
-         quitButton.setOnClickListener(new View.OnClickListener() {
+        ImageButton quitButton = findViewById(R.id.endButton);
+        quitButton.setOnClickListener(new View.OnClickListener() {
         @Override
         public void onClick(View view) {
         quitCheck();
         }
         });
-         Button upButton = findViewById(R.id.upButton);
-         upButton.setOnClickListener(new View.OnClickListener() {
+        Button upButton = findViewById(R.id.upButton);
+        upButton.setOnClickListener(new View.OnClickListener() {
         @Override
         public void onClick(View view) {
         turn(Direction.up);
         }
         });
-         Button rightButton = findViewById(R.id.rightButton);
-         rightButton.setOnClickListener(new View.OnClickListener() {
+        Button rightButton = findViewById(R.id.rightButton);
+        rightButton.setOnClickListener(new View.OnClickListener() {
         @Override
         public void onClick(View view) {
         turn(Direction.right);
         }
         });
-         Button downButton = findViewById(R.id.downButton);
-         downButton.setOnClickListener(new View.OnClickListener() {
+        Button downButton = findViewById(R.id.downButton);
+        downButton.setOnClickListener(new View.OnClickListener() {
         @Override
         public void onClick(View view) {
         turn(Direction.down);
         }
         });
-         Button leftButton = findViewById(R.id.leftButton);
-         leftButton.setOnClickListener(new View.OnClickListener() {
+        Button leftButton = findViewById(R.id.leftButton);
+        leftButton.setOnClickListener(new View.OnClickListener() {
         @Override
         public void onClick(View view) {
         turn(Direction.left);
         }
         });
-         gameState = GameStateID.PAUSED;
-         if (MainActivity.getBig()) {
-         range = InitialPositions.bigRange;
-         path.add(InitialPositions.bigFirst);
-         path.add(InitialPositions.bigSecond);
-         path.add(InitialPositions.bigThird);
-         targetPosition = InitialPositions.bigGoal;
-         //render positions of snake, grid, etc on ui
-         } else {
-         range = InitialPositions.smallRange;
-         path.add(InitialPositions.smallFirst);
-         path.add(InitialPositions.smallSecond);
-         path.add(InitialPositions.smallThird);
-         targetPosition = InitialPositions.smallGoal;
-         //render positions of snake, grid, etc on ui
-         }
-         */
+        gameState = GameStateID.PAUSED;
+        if (MainActivity.getBig()) {
+            range = InitialPositions.bigRange;
+            path.add(InitialPositions.bigFirst);
+            path.add(InitialPositions.bigSecond);
+            path.add(InitialPositions.bigThird);
+            targetPosition = InitialPositions.bigGoal;
+            //render positions of snake, grid, etc on ui
+        } else {
+            range = InitialPositions.smallRange;
+            path.add(InitialPositions.smallFirst);
+            path.add(InitialPositions.smallSecond);
+            path.add(InitialPositions.smallThird);
+            targetPosition = InitialPositions.smallGoal;
+            //render positions of snake, grid, etc on ui
+        }
+
     }
 
     /** popup dialogue asking if you are sure you want to quit*/
