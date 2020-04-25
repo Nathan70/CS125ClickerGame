@@ -114,7 +114,6 @@ public class NewGameActivity extends AppCompatActivity {
             targetPosition = InitialPositions.smallGoal;
             //render positions of snake, grid, etc on ui
         }
-
     }
 
     /** popup dialogue asking if you are sure you want to quit*/
@@ -214,7 +213,9 @@ public class NewGameActivity extends AppCompatActivity {
 
     /** turn the snake, direction facing */
     public void turn(int toFace) {
-        facing = toFace;
+        if (gameState == GameStateID.RUNNING) {
+            facing = toFace;
+        }
         //visual indicator of direction facing change
     }
 
@@ -222,7 +223,7 @@ public class NewGameActivity extends AppCompatActivity {
     public void togglePause() {
         if (gameState == GameStateID.PAUSED) {
             gameState = GameStateID.RUNNING;
-            timer.schedule(new runMove(), 1000, 250);
+            timer.schedule(new runMove(), InitialPositions.moveDelay, InitialPositions.moveDelay);
         } else if (gameState == GameStateID.RUNNING) {
             gameState = GameStateID.PAUSED;
             timer.purge();

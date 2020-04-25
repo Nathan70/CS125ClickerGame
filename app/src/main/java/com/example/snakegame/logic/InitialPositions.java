@@ -30,4 +30,7 @@ public class InitialPositions {
 
     /** test */
     public static final int bigRange = 25;
+
+    /** move delay*/
+    public static final long moveDelay = 100;
 }
