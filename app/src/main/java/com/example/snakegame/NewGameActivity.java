@@ -12,7 +12,6 @@ import android.widget.ImageButton;
 import android.widget.TextView;
 
 import com.example.snakegame.logic.Direction;
-import com.example.snakegame.logic.Game;
 import com.example.snakegame.logic.GameStateID;
 import com.example.snakegame.logic.InitialPositions;
 
@@ -93,26 +92,6 @@ public class NewGameActivity extends AppCompatActivity {
         }
     }
 
-    /** game state */
-    private int gameState;
-
-    /** score */
-    private int score;
-
-    /** range */
-    private int range;
-
-    /** path */
-    private List<int[]> path = new ArrayList<>();
-
-    /** position of target*/
-    private int[] targetPosition;
-
-    /** timer */
-    private Timer timer;
-
-    /** direction snake is currently facing*/
-    private int facing = Direction.right;
 
     /** popup dialogue asking if you are sure you want to quit*/
     private void quitCheck() {
