@@ -39,6 +39,7 @@ public class NewGameActivity extends AppCompatActivity {
                 togglePause();
             }
         });
+        /**
         ImageButton quitButton = findViewById(R.id.endButton);
         quitButton.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -90,28 +91,8 @@ public class NewGameActivity extends AppCompatActivity {
             targetPosition = InitialPositions.smallGoal;
             //render positions of snake, grid, etc on ui
         }
+         */
     }
-
-    /** game state */
-    private int gameState;
-
-    /** score */
-    private int score;
-
-    /** range */
-    private int range;
-
-    /** path */
-    private List<int[]> path = new ArrayList<>();
-
-    /** position of target*/
-    private int[] targetPosition;
-
-    /** timer */
-    private Timer timer = new Timer();
-
-    /** direction snake is currently facing*/
-    private int facing = Direction.right;
 
     /** popup dialogue asking if you are sure you want to quit*/
     private void quitCheck() {
