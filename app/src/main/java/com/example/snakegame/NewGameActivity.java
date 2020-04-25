@@ -108,7 +108,7 @@ public class NewGameActivity extends AppCompatActivity {
     private int[] targetPosition;
 
     /** timer */
-    private Timer timer;
+    private Timer timer = new Timer();
 
     /** direction snake is currently facing*/
     private int facing = Direction.right;
@@ -136,10 +136,6 @@ public class NewGameActivity extends AppCompatActivity {
         Intent intent = new Intent(this, MainActivity.class);
         startActivity(intent);
         return null;
-    }
-
-    private void updateScore() {
-        scoreText.setText(String.valueOf(score));
     }
 
 
@@ -201,7 +197,7 @@ public class NewGameActivity extends AppCompatActivity {
         targetPosition = point;
         // visual position of target change
         score++;
-        updateScore();
+        scoreText.setText(String.valueOf(score));
     }
 
     /** you lose game, game over*/

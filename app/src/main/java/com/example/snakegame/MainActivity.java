@@ -5,7 +5,6 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
-import android.widget.Button;
 import android.widget.Switch;
 
 public class MainActivity extends AppCompatActivity {
@@ -21,8 +20,8 @@ public class MainActivity extends AppCompatActivity {
         Switch bigSwitch = findViewById(R.id.bigSwitch);
         big = bigSwitch.isChecked();
 
-        Button playButton = findViewById(R.id.playButton);
-        playButton.setOnClickListener(new View.OnClickListener() {
+
+        findViewById(R.id.playButton).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 openGameActivity();
@@ -31,8 +30,7 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void openGameActivity() {
-        Intent intent = new Intent(this, NewGameActivity.class);
-        startActivity(intent);
+        startActivity(new Intent(this, NewGameActivity.class));
     }
 
     public static boolean getBig() {
