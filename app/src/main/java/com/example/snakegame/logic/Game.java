@@ -57,7 +57,6 @@ public class Game {
     }
 
     /** hi */
-
     class runMove extends TimerTask {
 
         @Override
