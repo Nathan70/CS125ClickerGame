@@ -99,6 +99,5 @@ public class NewGameActivity extends AppCompatActivity {
         String update = String.valueOf(currentScore);
         TextView scoreText = findViewById(R.id.updateScore);
         scoreText.setText(update);
-        int test = 1;
     }
 }
