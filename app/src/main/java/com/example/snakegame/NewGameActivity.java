@@ -26,73 +26,7 @@ public class NewGameActivity extends AppCompatActivity {
     /** something */
     TextView scoreText = findViewById(R.id.updateScore);
 
-    @Override
-    protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_new_game);
 
-        scoreText.setText("0");
-        ImageButton pauseButton = findViewById(R.id.pauseButton);
-        pauseButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                togglePause();
-            }
-        });
-        /**
-        ImageButton quitButton = findViewById(R.id.endButton);
-        quitButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                quitCheck();
-            }
-        });
-        Button upButton = findViewById(R.id.upButton);
-        upButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                turn(Direction.up);
-            }
-        });
-        Button rightButton = findViewById(R.id.rightButton);
-        rightButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                turn(Direction.right);
-            }
-        });
-        Button downButton = findViewById(R.id.downButton);
-        downButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                turn(Direction.down);
-            }
-        });
-        Button leftButton = findViewById(R.id.leftButton);
-        leftButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                turn(Direction.left);
-            }
-        });
-        gameState = GameStateID.PAUSED;
-        if (MainActivity.getBig()) {
-            range = InitialPositions.bigRange;
-            path.add(InitialPositions.bigFirst);
-            path.add(InitialPositions.bigSecond);
-            path.add(InitialPositions.bigThird);
-            targetPosition = InitialPositions.bigGoal;
-            //render positions of snake, grid, etc on ui
-        } else {
-            range = InitialPositions.smallRange;
-            path.add(InitialPositions.smallFirst);
-            path.add(InitialPositions.smallSecond);
-            path.add(InitialPositions.smallThird);
-            targetPosition = InitialPositions.smallGoal;
-            //render positions of snake, grid, etc on ui
-        }
-         */
-    }
 
     /** game state */
     private int gameState;
@@ -114,6 +48,75 @@ public class NewGameActivity extends AppCompatActivity {
 
     /** direction snake is currently facing*/
     private int facing = Direction.right;
+
+
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_new_game);
+
+        scoreText.setText("0");
+        ImageButton pauseButton = findViewById(R.id.pauseButton);
+        pauseButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                togglePause();
+            }
+        });
+        /**
+         ImageButton quitButton = findViewById(R.id.endButton);
+         quitButton.setOnClickListener(new View.OnClickListener() {
+        @Override
+        public void onClick(View view) {
+        quitCheck();
+        }
+        });
+         Button upButton = findViewById(R.id.upButton);
+         upButton.setOnClickListener(new View.OnClickListener() {
+        @Override
+        public void onClick(View view) {
+        turn(Direction.up);
+        }
+        });
+         Button rightButton = findViewById(R.id.rightButton);
+         rightButton.setOnClickListener(new View.OnClickListener() {
+        @Override
+        public void onClick(View view) {
+        turn(Direction.right);
+        }
+        });
+         Button downButton = findViewById(R.id.downButton);
+         downButton.setOnClickListener(new View.OnClickListener() {
+        @Override
+        public void onClick(View view) {
+        turn(Direction.down);
+        }
+        });
+         Button leftButton = findViewById(R.id.leftButton);
+         leftButton.setOnClickListener(new View.OnClickListener() {
+        @Override
+        public void onClick(View view) {
+        turn(Direction.left);
+        }
+        });
+         gameState = GameStateID.PAUSED;
+         if (MainActivity.getBig()) {
+         range = InitialPositions.bigRange;
+         path.add(InitialPositions.bigFirst);
+         path.add(InitialPositions.bigSecond);
+         path.add(InitialPositions.bigThird);
+         targetPosition = InitialPositions.bigGoal;
+         //render positions of snake, grid, etc on ui
+         } else {
+         range = InitialPositions.smallRange;
+         path.add(InitialPositions.smallFirst);
+         path.add(InitialPositions.smallSecond);
+         path.add(InitialPositions.smallThird);
+         targetPosition = InitialPositions.smallGoal;
+         //render positions of snake, grid, etc on ui
+         }
+         */
+    }
 
     /** popup dialogue asking if you are sure you want to quit*/
     private void quitCheck() {
