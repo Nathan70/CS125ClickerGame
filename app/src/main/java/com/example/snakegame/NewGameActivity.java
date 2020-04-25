@@ -3,6 +3,7 @@ package com.example.snakegame;
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
@@ -113,6 +114,9 @@ public class NewGameActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 turn(Direction.left);
+                AlertDialog.Builder builder = new AlertDialog.Builder(getActivity());
+                builder.setMessage("move left");
+                builder.create().show();
             }
         });
         gameState = GameStateID.PAUSED;
@@ -131,6 +135,13 @@ public class NewGameActivity extends AppCompatActivity {
             targetPosition = InitialPositions.smallGoal;
             //render positions of snake, grid, etc on ui
         }
+    }
+
+    /**
+     *
+     */
+    private Context getActivity() {
+        return this;
     }
 
     /**
