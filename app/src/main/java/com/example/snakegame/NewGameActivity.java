@@ -24,9 +24,6 @@ import java.util.TimerTask;
 
 public class NewGameActivity extends AppCompatActivity {
 
-    /** instance of Game*/
-    Game game;
-
     /** something */
     TextView scoreText = findViewById(R.id.updateScore);
 
@@ -129,26 +126,7 @@ public class NewGameActivity extends AppCompatActivity {
 
 
 
-    /** game state */
-    private int gameState;
-
-    /** score */
-    private int score;
-
-    /** range */
-    private int range;
-
-    /** path */
-    private List<int[]> path = new ArrayList<>();
-
-    /** position of target*/
-    private int[] targetPosition;
-
-    /** timer */
-    private Timer timer;
-
-    /** direction snake is currently facing*/
-    private int facing = Direction.right;
+    //MARKER
 
 
 
