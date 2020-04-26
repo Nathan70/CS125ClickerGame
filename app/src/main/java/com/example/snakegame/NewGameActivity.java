@@ -62,7 +62,7 @@ public class NewGameActivity extends AppCompatActivity {
     /**
      * timer
      */
-    private Timer timer = new Timer();
+    private Timer timer;
 
     /**
      * direction snake is currently facing
@@ -89,6 +89,8 @@ public class NewGameActivity extends AppCompatActivity {
                 togglePause();
             }
         });
+        TextView pauseText = findViewById(R.id.paused);
+        pauseText.setVisibility(VISIBLE);
         ImageButton quitButton = findViewById(R.id.endButton);
         quitButton.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -254,7 +256,7 @@ public class NewGameActivity extends AppCompatActivity {
      */
     private void gameOver() {
         gameState = GameStateID.ENDED;
-        timer.cancel();
+        //timer.cancel();
         endGame();
         //You lose message, brings up score
     }
@@ -275,10 +277,15 @@ public class NewGameActivity extends AppCompatActivity {
     public void togglePause() {
         if (gameState == GameStateID.PAUSED) {
             gameState = GameStateID.RUNNING;
-            timer.schedule(new runMove(), InitialPositions.moveDelay, InitialPositions.moveDelay);
+            TextView pauseText = findViewById(R.id.paused);
+            pauseText.setVisibility(View.INVISIBLE);
+            //timer = new Timer();
+            //timer.schedule(new runMove(), InitialPositions.moveDelay, InitialPositions.moveDelay);
         } else if (gameState == GameStateID.RUNNING) {
             gameState = GameStateID.PAUSED;
-            timer.purge();
+            TextView pauseText = findViewById(R.id.paused);
+            pauseText.setVisibility(VISIBLE);
+            //timer.purge();
         }
     }
 }
