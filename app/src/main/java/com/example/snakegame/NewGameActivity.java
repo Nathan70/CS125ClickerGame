@@ -162,7 +162,12 @@ public class NewGameActivity extends AppCompatActivity {
         AlertDialog.Builder builder = new AlertDialog.Builder(this);
         builder.setMessage("Are you sure you want to Quit?");
         builder.setNegativeButton("No", null);
-        builder.setPositiveButton("Yes", endGame());
+        builder.setPositiveButton("Yes", new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialogInterface, int i) {
+
+            }
+        });
         builder.create().show();
     }
 
