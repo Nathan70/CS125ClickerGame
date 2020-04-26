@@ -3,6 +3,7 @@ package com.example.snakegame;
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
@@ -23,28 +24,47 @@ import java.util.TimerTask;
 
 public class NewGameActivity extends AppCompatActivity {
 
-    /** something */
+    /**
+     * something
+     */
     TextView scoreText;
 
-    /** game state */
+    //MARKER
+
+
+    /**
+     * game state
+     */
     private int gameState;
 
-    /** score */
+    /**
+     * score
+     */
     private int score;
 
-    /** range */
+    /**
+     * range
+     */
     private int range;
 
-    /** path */
+    /**
+     * path
+     */
     private List<int[]> path = new ArrayList<>();
 
-    /** position of target*/
+    /**
+     * position of target
+     */
     private int[] targetPosition;
 
-    /** timer */
+    /**
+     * timer
+     */
     private Timer timer = new Timer();
 
-    /** direction snake is currently facing*/
+    /**
+     * direction snake is currently facing
+     */
     private int facing = Direction.right;
 
 
@@ -53,8 +73,7 @@ public class NewGameActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_new_game);
 
-        scoreText = findViewById(R.id.updateScore);
-        scoreText.setText("0");
+        //scoreText.setText("0");
         ImageButton pauseButton = findViewById(R.id.pauseButton);
         pauseButton.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -95,6 +114,9 @@ public class NewGameActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 turn(Direction.left);
+                AlertDialog.Builder builder = new AlertDialog.Builder(getActivity());
+                builder.setMessage("move left");
+                builder.create().show();
             }
         });
         gameState = GameStateID.PAUSED;
@@ -115,16 +137,27 @@ public class NewGameActivity extends AppCompatActivity {
         }
     }
 
-    /** popup dialogue asking if you are sure you want to quit*/
+    /**
+     *
+     */
+    private Context getActivity() {
+        return this;
+    }
+
+    /**
+     * popup dialogue asking if you are sure you want to quit
+     */
     private void quitCheck() {
         AlertDialog.Builder builder = new AlertDialog.Builder(this);
         builder.setMessage("Are you sure you want to Quit?");
-        builder.setPositiveButton("Yes", endGame());
         builder.setNegativeButton("No", null);
+        builder.setPositiveButton("Yes", endGame());
         builder.create().show();
     }
 
-    /** what happens when you die or after you confirm you want to quit */
+    /**
+     * what happens when you die or after you confirm you want to quit
+     */
     private DialogInterface.OnClickListener endGame() {
         AlertDialog.Builder builder = new AlertDialog.Builder(this);
         builder.setMessage("Game Over. Score: " + score);
@@ -133,7 +166,9 @@ public class NewGameActivity extends AppCompatActivity {
         return null;
     }
 
-    /** return to Main Menu where you can set size and create a new game*/
+    /**
+     * return to Main Menu where you can set size and create a new game
+     */
     private DialogInterface.OnClickListener mainMenu() {
         Intent intent = new Intent(this, MainActivity.class);
         startActivity(intent);
@@ -141,14 +176,12 @@ public class NewGameActivity extends AppCompatActivity {
     }
 
 
-
-
-
     //MARKER
 
 
-
-    /** hi */
+    /**
+     * hi
+     */
     class runMove extends TimerTask {
 
         @Override
@@ -156,7 +189,10 @@ public class NewGameActivity extends AppCompatActivity {
             move(facing);
         }
     }
-    /** moving */
+
+    /**
+     * moving
+     */
     private void move(int direction) {
         int[] claim = path.get(path.size() - 1);
         if (direction == Direction.up) {
@@ -184,7 +220,9 @@ public class NewGameActivity extends AppCompatActivity {
         }
     }
 
-    /** eat a target*/
+    /**
+     * eat a target
+     */
     private void eat() {
         Random random = new Random();
         // Randomize next target Position
@@ -202,7 +240,9 @@ public class NewGameActivity extends AppCompatActivity {
         scoreText.setText(String.valueOf(score));
     }
 
-    /** you lose game, game over*/
+    /**
+     * you lose game, game over
+     */
     private void gameOver() {
         gameState = GameStateID.ENDED;
         timer.cancel();
@@ -210,17 +250,23 @@ public class NewGameActivity extends AppCompatActivity {
         //You lose message, brings up score
     }
 
-    /** turn the snake, direction facing */
+    /**
+     * turn the snake, direction facing
+     */
     public void turn(int toFace) {
-        facing = toFace;
+        if (gameState == GameStateID.RUNNING) {
+            facing = toFace;
+        }
         //visual indicator of direction facing change
     }
 
-    /** toggle gameState between RUNNING and PAUSED*/
+    /**
+     * toggle gameState between RUNNING and PAUSED
+     */
     public void togglePause() {
         if (gameState == GameStateID.PAUSED) {
             gameState = GameStateID.RUNNING;
-            timer.schedule(new runMove(), 1000, 250);
+            timer.schedule(new runMove(), InitialPositions.moveDelay, InitialPositions.moveDelay);
         } else if (gameState == GameStateID.RUNNING) {
             gameState = GameStateID.PAUSED;
             timer.purge();
