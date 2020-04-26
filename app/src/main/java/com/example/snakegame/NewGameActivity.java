@@ -72,6 +72,7 @@ public class NewGameActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_new_game);
+        // hi
 
         scoreText = findViewById(R.id.updateScore);
         scoreText.setText("0");
