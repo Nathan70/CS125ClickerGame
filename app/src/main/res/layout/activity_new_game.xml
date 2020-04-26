@@ -124,17 +124,13 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/score" />
 
-    <EditText
+    <TextView
         android:id="@+id/paused"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="1300dp"
-        android:ems="10"
-        android:inputType="textPersonName"
+        android:layout_marginTop="680dp"
         android:text="@string/pause"
-        app:layout_constraintBottom_toTopOf="@+id/score"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        android:autofillHints="" />
+        app:layout_constraintTop_toTopOf="parent" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
