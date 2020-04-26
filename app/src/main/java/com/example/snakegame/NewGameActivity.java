@@ -73,8 +73,6 @@ public class NewGameActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_new_game);
 
-        scoreText = findViewById(R.id.updateScore);
-        scoreText.setText("0");
         //scoreText.setText("0");
         ImageButton pauseButton = findViewById(R.id.pauseButton);
         pauseButton.setOnClickListener(new View.OnClickListener() {
