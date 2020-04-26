@@ -50,13 +50,11 @@
         android:id="@+id/snake_img"
         android:layout_width="335dp"
         android:layout_height="487dp"
-        android:layout_marginTop="192dp"
-        android:layout_marginBottom="54dp"
+        android:layout_marginBottom="42dp"
         android:contentDescription="@string/snake_game"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
         app:srcCompat="@drawable/snake_main" />
 
     <Switch
