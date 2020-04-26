@@ -24,9 +24,7 @@ import java.util.TimerTask;
 public class NewGameActivity extends AppCompatActivity {
 
     /** something */
-    TextView scoreText = findViewById(R.id.updateScore);
-
-
+    TextView scoreText;
 
     /** game state */
     private int gameState;
@@ -55,6 +53,7 @@ public class NewGameActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_new_game);
 
+        scoreText = findViewById(R.id.updateScore);
         scoreText.setText("0");
         ImageButton pauseButton = findViewById(R.id.pauseButton);
         pauseButton.setOnClickListener(new View.OnClickListener() {
@@ -65,38 +64,38 @@ public class NewGameActivity extends AppCompatActivity {
         });
         ImageButton quitButton = findViewById(R.id.endButton);
         quitButton.setOnClickListener(new View.OnClickListener() {
-        @Override
-        public void onClick(View view) {
-        quitCheck();
-        }
+            @Override
+            public void onClick(View view) {
+                quitCheck();
+            }
         });
         Button upButton = findViewById(R.id.upButton);
         upButton.setOnClickListener(new View.OnClickListener() {
-        @Override
-        public void onClick(View view) {
-        turn(Direction.up);
-        }
+            @Override
+            public void onClick(View view) {
+                turn(Direction.up);
+            }
         });
         Button rightButton = findViewById(R.id.rightButton);
         rightButton.setOnClickListener(new View.OnClickListener() {
-        @Override
-        public void onClick(View view) {
-        turn(Direction.right);
-        }
+            @Override
+            public void onClick(View view) {
+                turn(Direction.right);
+            }
         });
         Button downButton = findViewById(R.id.downButton);
         downButton.setOnClickListener(new View.OnClickListener() {
-        @Override
-        public void onClick(View view) {
-        turn(Direction.down);
-        }
+            @Override
+            public void onClick(View view) {
+                turn(Direction.down);
+            }
         });
         Button leftButton = findViewById(R.id.leftButton);
         leftButton.setOnClickListener(new View.OnClickListener() {
-        @Override
-        public void onClick(View view) {
-        turn(Direction.left);
-        }
+            @Override
+            public void onClick(View view) {
+                turn(Direction.left);
+            }
         });
         gameState = GameStateID.PAUSED;
         if (MainActivity.getBig()) {
@@ -114,7 +113,6 @@ public class NewGameActivity extends AppCompatActivity {
             targetPosition = InitialPositions.smallGoal;
             //render positions of snake, grid, etc on ui
         }
-
     }
 
     /** popup dialogue asking if you are sure you want to quit*/
