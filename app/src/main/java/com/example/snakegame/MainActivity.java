@@ -17,13 +17,12 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        Switch bigSwitch = findViewById(R.id.bigSwitch);
-        big = bigSwitch.isChecked();
-
 
         findViewById(R.id.playButton).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                Switch bigSwitch = findViewById(R.id.bigSwitch);
+                big = bigSwitch.isChecked();
                 openGameActivity();
             }
         });

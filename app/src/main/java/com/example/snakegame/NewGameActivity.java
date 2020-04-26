@@ -22,6 +22,8 @@ import java.util.Random;
 import java.util.Timer;
 import java.util.TimerTask;
 
+import static android.view.View.VISIBLE;
+
 public class NewGameActivity extends AppCompatActivity {
 
     /**
@@ -73,6 +75,10 @@ public class NewGameActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_new_game);
         // hi
+        if (MainActivity.getBig()) {
+            TextView bigText = findViewById(R.id.mode);
+            bigText.setVisibility(VISIBLE);
+        }
 
         scoreText = findViewById(R.id.updateScore);
         scoreText.setText("0");
@@ -102,6 +108,7 @@ public class NewGameActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 turn(Direction.right);
+                eat();
             }
         });
         Button downButton = findViewById(R.id.downButton);
