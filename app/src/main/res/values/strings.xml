@@ -11,4 +11,5 @@
     <string name="updateScore">0</string>
     <string name="pause">pause</string>
     <string name="end">end</string>
+    <string name="mode_big">Mode: Big</string>
 </resources>
