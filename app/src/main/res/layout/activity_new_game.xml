@@ -130,7 +130,38 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="680dp"
         android:text="@string/pause"
+        android:visibility="visible"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageView
+        android:id="@+id/bigGrid"
+        android:layout_width="385dp"
+        android:layout_height="372dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginLeft="16dp"
+        android:layout_marginTop="15dp"
+        android:layout_marginEnd="10dp"
+        android:layout_marginRight="10dp"
+        android:layout_marginBottom="32dp"
+        android:contentDescription="@string/biggrid"
+        android:visibility="visible"
+        app:layout_constraintBottom_toTopOf="@+id/upButton"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/mode"
+        app:srcCompat="@drawable/big_grid" />
+
+    <ImageView
+        android:id="@+id/smallGrid"
+        android:layout_width="280dp"
+        android:layout_height="223dp"
+        android:layout_marginTop="188dp"
+        android:layout_marginEnd="64dp"
+        android:layout_marginRight="64dp"
+        android:contentDescription="@string/smallgrid"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/small_grid" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -12,4 +12,6 @@
     <string name="pause">pause</string>
     <string name="end">end</string>
     <string name="mode_big">Mode: Big</string>
+    <string name="biggrid">bigGrid</string>
+    <string name="smallgrid">smallGrid</string>
 </resources>
