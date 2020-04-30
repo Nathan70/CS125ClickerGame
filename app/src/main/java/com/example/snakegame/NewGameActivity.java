@@ -141,6 +141,7 @@ public class NewGameActivity extends AppCompatActivity {
             path.add(InitialPositions.bigSecond);
             path.add(InitialPositions.bigThird);
             targetPosition = InitialPositions.bigGoal;
+
             ImageView bigGrid = findViewById(R.id.bigGrid);
             bigGrid.setVisibility(VISIBLE);
             ImageView smallGrid = findViewById(R.id.smallGrid);
@@ -152,6 +153,7 @@ public class NewGameActivity extends AppCompatActivity {
             path.add(InitialPositions.smallSecond);
             path.add(InitialPositions.smallThird);
             targetPosition = InitialPositions.smallGoal;
+
             ImageView bigGrid = findViewById(R.id.bigGrid);
             bigGrid.setVisibility(View.INVISIBLE);
             ImageView smallGrid = findViewById(R.id.smallGrid);
