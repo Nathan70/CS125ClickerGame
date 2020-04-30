@@ -91,7 +91,7 @@ public class NewGameActivity extends AppCompatActivity {
             }
         });
         TextView pauseText = findViewById(R.id.paused);
-        pauseText.setVisibility(VISIBLE);
+        pauseText.setVisibility(View.INVISIBLE);
 
         ImageButton quitButton = findViewById(R.id.endButton);
         quitButton.setOnClickListener(new View.OnClickListener() {
@@ -100,7 +100,7 @@ public class NewGameActivity extends AppCompatActivity {
                 quitCheck();
             }
         });
-        
+
         Button upButton = findViewById(R.id.upButton);
         upButton.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -292,8 +292,9 @@ public class NewGameActivity extends AppCompatActivity {
             gameState = GameStateID.RUNNING;
             TextView pauseText = findViewById(R.id.paused);
             pauseText.setVisibility(View.INVISIBLE);
-            //timer = new Timer("timer");
-            //timer.schedule(new runMove(), InitialPositions.moveDelay, InitialPositions.moveDelay);
+            timer = new Timer();
+            TimerTask task = new runMove();
+            timer.schedule(task, InitialPositions.moveDelay, InitialPositions.moveDelay);
         } else if (gameState == GameStateID.RUNNING) {
             gameState = GameStateID.PAUSED;
             TextView pauseText = findViewById(R.id.paused);
