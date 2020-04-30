@@ -135,47 +135,17 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <ImageView
-        android:id="@+id/bigGrid"
-        android:layout_width="385dp"
-        android:layout_height="372dp"
-        android:layout_marginStart="16dp"
-        android:layout_marginLeft="16dp"
-        android:layout_marginTop="15dp"
-        android:layout_marginEnd="10dp"
-        android:layout_marginRight="10dp"
-        android:layout_marginBottom="32dp"
-        android:contentDescription="@string/biggrid"
-        android:visibility="visible"
-        app:layout_constraintBottom_toTopOf="@+id/upButton"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/mode"
-        app:srcCompat="@drawable/big_grid" />
-
-    <ImageView
-        android:id="@+id/smallGrid"
-        android:layout_width="280dp"
-        android:layout_height="223dp"
-        android:layout_marginTop="188dp"
-        android:layout_marginEnd="64dp"
-        android:layout_marginRight="64dp"
-        android:contentDescription="@string/smallgrid"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/small_grid" />
-
-    <ImageView
         android:id="@+id/cell1"
         android:layout_width="33dp"
         android:layout_height="35dp"
-        android:layout_marginStart="10dp"
-        android:layout_marginLeft="10dp"
-        android:layout_marginTop="4dp"
-        android:layout_marginEnd="8dp"
-        android:layout_marginRight="8dp"
-        app:layout_constraintEnd_toStartOf="@+id/smallGrid"
-        app:layout_constraintHorizontal_bias="1.0"
-        app:layout_constraintStart_toEndOf="@+id/bigGrid"
+        android:layout_marginStart="26dp"
+        android:layout_marginLeft="26dp"
+        android:layout_marginEnd="23dp"
+        android:layout_marginRight="23dp"
+        android:layout_marginBottom="129dp"
+        app:layout_constraintBottom_toTopOf="@+id/leftButton"
+        app:layout_constraintEnd_toStartOf="@+id/cell2"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/cell8"
         app:srcCompat="@drawable/snake" />
 
@@ -183,14 +153,11 @@
         android:id="@+id/cell2"
         android:layout_width="33dp"
         android:layout_height="35dp"
-        android:layout_marginStart="80dp"
-        android:layout_marginLeft="80dp"
-        android:layout_marginTop="4dp"
-        android:layout_marginEnd="12dp"
-        android:layout_marginRight="12dp"
-        app:layout_constraintEnd_toStartOf="@+id/smallGrid"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="parent"
+        android:layout_marginEnd="16dp"
+        android:layout_marginRight="16dp"
+        android:layout_marginBottom="129dp"
+        app:layout_constraintBottom_toTopOf="@+id/leftButton"
+        app:layout_constraintEnd_toStartOf="@+id/cell3"
         app:layout_constraintTop_toBottomOf="@+id/cell9"
         app:srcCompat="@drawable/snake" />
 
@@ -198,10 +165,11 @@
         android:id="@+id/cell3"
         android:layout_width="33dp"
         android:layout_height="35dp"
-        android:layout_marginTop="4dp"
-        app:layout_constraintEnd_toStartOf="@+id/bigGrid"
-        app:layout_constraintHorizontal_bias="0.585"
-        app:layout_constraintStart_toEndOf="@+id/smallGrid"
+        android:layout_marginEnd="23dp"
+        android:layout_marginRight="23dp"
+        android:layout_marginBottom="81dp"
+        app:layout_constraintBottom_toTopOf="@+id/upButton"
+        app:layout_constraintEnd_toStartOf="@+id/cell4"
         app:layout_constraintTop_toBottomOf="@+id/cell10"
         app:srcCompat="@drawable/snake" />
 
@@ -209,13 +177,11 @@
         android:id="@+id/cell4"
         android:layout_width="33dp"
         android:layout_height="35dp"
-        android:layout_marginStart="9dp"
-        android:layout_marginLeft="9dp"
-        android:layout_marginTop="7dp"
-        android:layout_marginEnd="9dp"
-        android:layout_marginRight="9dp"
-        app:layout_constraintEnd_toStartOf="@+id/smallGrid"
-        app:layout_constraintStart_toEndOf="@+id/smallGrid"
+        android:layout_marginEnd="18dp"
+        android:layout_marginRight="18dp"
+        android:layout_marginBottom="81dp"
+        app:layout_constraintBottom_toTopOf="@+id/upButton"
+        app:layout_constraintEnd_toStartOf="@+id/cell5"
         app:layout_constraintTop_toBottomOf="@+id/cell11"
         app:srcCompat="@drawable/snake" />
 
@@ -223,14 +189,11 @@
         android:id="@+id/cell5"
         android:layout_width="33dp"
         android:layout_height="35dp"
-        android:layout_marginStart="9dp"
-        android:layout_marginLeft="9dp"
-        android:layout_marginTop="4dp"
-        android:layout_marginEnd="11dp"
-        android:layout_marginRight="11dp"
-        app:layout_constraintEnd_toStartOf="@+id/bigGrid"
-        app:layout_constraintHorizontal_bias="0.278"
-        app:layout_constraintStart_toEndOf="@+id/smallGrid"
+        android:layout_marginEnd="23dp"
+        android:layout_marginRight="23dp"
+        android:layout_marginBottom="81dp"
+        app:layout_constraintBottom_toTopOf="@+id/upButton"
+        app:layout_constraintEnd_toStartOf="@+id/cell6"
         app:layout_constraintTop_toBottomOf="@+id/cell12"
         app:srcCompat="@drawable/snake" />
 
@@ -238,14 +201,11 @@
         android:id="@+id/cell6"
         android:layout_width="33dp"
         android:layout_height="35dp"
-        android:layout_marginStart="9dp"
-        android:layout_marginLeft="9dp"
-        android:layout_marginTop="4dp"
-        android:layout_marginEnd="11dp"
-        android:layout_marginRight="11dp"
-        app:layout_constraintEnd_toStartOf="@+id/bigGrid"
-        app:layout_constraintHorizontal_bias="0.158"
-        app:layout_constraintStart_toEndOf="@+id/smallGrid"
+        android:layout_marginEnd="20dp"
+        android:layout_marginRight="20dp"
+        android:layout_marginBottom="129dp"
+        app:layout_constraintBottom_toTopOf="@+id/rightButton"
+        app:layout_constraintEnd_toStartOf="@+id/cell7"
         app:layout_constraintTop_toBottomOf="@+id/cell13"
         app:srcCompat="@drawable/snake" />
 
@@ -253,12 +213,11 @@
         android:id="@+id/cell7"
         android:layout_width="33dp"
         android:layout_height="35dp"
-        android:layout_marginTop="4dp"
-        android:layout_marginEnd="21dp"
-        android:layout_marginRight="21dp"
-        app:layout_constraintEnd_toStartOf="@+id/bigGrid"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toEndOf="@+id/smallGrid"
+        android:layout_marginEnd="31dp"
+        android:layout_marginRight="31dp"
+        android:layout_marginBottom="128dp"
+        app:layout_constraintBottom_toTopOf="@+id/rightButton"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/cell14"
         app:srcCompat="@drawable/snake" />
 
@@ -266,10 +225,12 @@
         android:id="@+id/cell8"
         android:layout_width="33dp"
         android:layout_height="35dp"
-        android:layout_marginTop="8dp"
-        android:layout_marginEnd="352dp"
-        android:layout_marginRight="352dp"
-        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginStart="26dp"
+        android:layout_marginLeft="26dp"
+        android:layout_marginEnd="23dp"
+        android:layout_marginRight="23dp"
+        app:layout_constraintEnd_toStartOf="@+id/cell9"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/cell15"
         app:srcCompat="@drawable/snake" />
 
@@ -277,14 +238,9 @@
         android:id="@+id/cell9"
         android:layout_width="33dp"
         android:layout_height="35dp"
-        android:layout_marginStart="15dp"
-        android:layout_marginLeft="15dp"
-        android:layout_marginTop="8dp"
-        android:layout_marginEnd="15dp"
-        android:layout_marginRight="15dp"
-        app:layout_constraintEnd_toStartOf="@+id/smallGrid"
-        app:layout_constraintHorizontal_bias="0.816"
-        app:layout_constraintStart_toEndOf="@+id/smallGrid"
+        android:layout_marginEnd="16dp"
+        android:layout_marginRight="16dp"
+        app:layout_constraintEnd_toStartOf="@+id/cell10"
         app:layout_constraintTop_toBottomOf="@+id/cell16"
         app:srcCompat="@drawable/snake" />
 
@@ -292,14 +248,9 @@
         android:id="@+id/cell10"
         android:layout_width="33dp"
         android:layout_height="35dp"
-        android:layout_marginStart="16dp"
-        android:layout_marginLeft="16dp"
-        android:layout_marginTop="8dp"
-        android:layout_marginEnd="5dp"
-        android:layout_marginRight="5dp"
-        app:layout_constraintEnd_toStartOf="@+id/bigGrid"
-        app:layout_constraintHorizontal_bias="0.594"
-        app:layout_constraintStart_toEndOf="@+id/smallGrid"
+        android:layout_marginEnd="23dp"
+        android:layout_marginRight="23dp"
+        app:layout_constraintEnd_toStartOf="@+id/cell11"
         app:layout_constraintTop_toBottomOf="@+id/cell17"
         app:srcCompat="@drawable/snake" />
 
@@ -307,14 +258,9 @@
         android:id="@+id/cell11"
         android:layout_width="33dp"
         android:layout_height="35dp"
-        android:layout_marginStart="16dp"
-        android:layout_marginLeft="16dp"
-        android:layout_marginTop="8dp"
-        android:layout_marginEnd="5dp"
-        android:layout_marginRight="5dp"
-        app:layout_constraintEnd_toStartOf="@+id/bigGrid"
-        app:layout_constraintHorizontal_bias="0.451"
-        app:layout_constraintStart_toEndOf="@+id/smallGrid"
+        android:layout_marginEnd="18dp"
+        android:layout_marginRight="18dp"
+        app:layout_constraintEnd_toStartOf="@+id/cell12"
         app:layout_constraintTop_toBottomOf="@+id/cell18"
         app:srcCompat="@drawable/snake" />
 
@@ -322,14 +268,9 @@
         android:id="@+id/cell12"
         android:layout_width="33dp"
         android:layout_height="35dp"
-        android:layout_marginStart="16dp"
-        android:layout_marginLeft="16dp"
-        android:layout_marginTop="8dp"
-        android:layout_marginEnd="5dp"
-        android:layout_marginRight="5dp"
-        app:layout_constraintEnd_toStartOf="@+id/bigGrid"
-        app:layout_constraintHorizontal_bias="0.351"
-        app:layout_constraintStart_toEndOf="@+id/cell14"
+        android:layout_marginEnd="23dp"
+        android:layout_marginRight="23dp"
+        app:layout_constraintEnd_toStartOf="@+id/cell13"
         app:layout_constraintTop_toBottomOf="@+id/cell19"
         app:srcCompat="@drawable/snake" />
 
@@ -337,14 +278,9 @@
         android:id="@+id/cell13"
         android:layout_width="33dp"
         android:layout_height="35dp"
-        android:layout_marginStart="2dp"
-        android:layout_marginLeft="2dp"
-        android:layout_marginTop="8dp"
-        android:layout_marginEnd="16dp"
-        android:layout_marginRight="16dp"
-        app:layout_constraintEnd_toStartOf="@+id/smallGrid"
-        app:layout_constraintHorizontal_bias="0.277"
-        app:layout_constraintStart_toEndOf="@+id/bigGrid"
+        android:layout_marginEnd="20dp"
+        android:layout_marginRight="20dp"
+        app:layout_constraintEnd_toStartOf="@+id/cell14"
         app:layout_constraintTop_toBottomOf="@+id/cell20"
         app:srcCompat="@drawable/snake" />
 
@@ -352,8 +288,9 @@
         android:id="@+id/cell14"
         android:layout_width="33dp"
         android:layout_height="35dp"
-        android:layout_marginTop="7dp"
-        app:layout_constraintStart_toEndOf="@+id/smallGrid"
+        android:layout_marginEnd="31dp"
+        android:layout_marginRight="31dp"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/cell21"
         app:srcCompat="@drawable/snake" />
 
@@ -361,9 +298,12 @@
         android:id="@+id/cell15"
         android:layout_width="33dp"
         android:layout_height="35dp"
-        android:layout_marginEnd="8dp"
-        android:layout_marginRight="8dp"
-        app:layout_constraintEnd_toStartOf="@+id/smallGrid"
+        android:layout_marginStart="26dp"
+        android:layout_marginLeft="26dp"
+        android:layout_marginEnd="23dp"
+        android:layout_marginRight="23dp"
+        app:layout_constraintEnd_toStartOf="@+id/cell16"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/cell22"
         app:srcCompat="@drawable/snake" />
 
@@ -371,23 +311,19 @@
         android:id="@+id/cell16"
         android:layout_width="33dp"
         android:layout_height="35dp"
-        android:layout_marginStart="15dp"
-        android:layout_marginLeft="15dp"
-        android:layout_marginEnd="6dp"
-        android:layout_marginRight="6dp"
-        app:layout_constraintEnd_toStartOf="@+id/bigGrid"
-        app:layout_constraintHorizontal_bias="0.724"
-        app:layout_constraintStart_toEndOf="@+id/smallGrid"
-        app:layout_constraintTop_toBottomOf="@+id/cell28"
+        android:layout_marginEnd="16dp"
+        android:layout_marginRight="16dp"
+        app:layout_constraintEnd_toStartOf="@+id/cell17"
+        app:layout_constraintTop_toBottomOf="@+id/cell23"
         app:srcCompat="@drawable/snake" />
 
     <ImageView
         android:id="@+id/cell17"
         android:layout_width="33dp"
         android:layout_height="35dp"
-        android:layout_marginStart="16dp"
-        android:layout_marginLeft="16dp"
-        app:layout_constraintStart_toEndOf="@+id/cell16"
+        android:layout_marginEnd="23dp"
+        android:layout_marginRight="23dp"
+        app:layout_constraintEnd_toStartOf="@+id/cell18"
         app:layout_constraintTop_toBottomOf="@+id/cell24"
         app:srcCompat="@drawable/snake" />
 
@@ -395,12 +331,9 @@
         android:id="@+id/cell18"
         android:layout_width="33dp"
         android:layout_height="35dp"
-        android:layout_marginStart="22dp"
-        android:layout_marginLeft="22dp"
-        android:layout_marginEnd="26dp"
-        android:layout_marginRight="26dp"
+        android:layout_marginEnd="18dp"
+        android:layout_marginRight="18dp"
         app:layout_constraintEnd_toStartOf="@+id/cell19"
-        app:layout_constraintStart_toEndOf="@+id/cell17"
         app:layout_constraintTop_toBottomOf="@+id/cell25"
         app:srcCompat="@drawable/snake" />
 
@@ -408,9 +341,9 @@
         android:id="@+id/cell19"
         android:layout_width="33dp"
         android:layout_height="35dp"
-        android:layout_marginStart="27dp"
-        android:layout_marginLeft="27dp"
-        app:layout_constraintStart_toEndOf="@+id/cell18"
+        android:layout_marginEnd="23dp"
+        android:layout_marginRight="23dp"
+        app:layout_constraintEnd_toStartOf="@+id/cell20"
         app:layout_constraintTop_toBottomOf="@+id/cell26"
         app:srcCompat="@drawable/snake" />
 
@@ -418,9 +351,9 @@
         android:id="@+id/cell20"
         android:layout_width="33dp"
         android:layout_height="35dp"
-        android:layout_marginStart="14dp"
-        android:layout_marginLeft="14dp"
-        app:layout_constraintStart_toEndOf="@+id/cell19"
+        android:layout_marginEnd="20dp"
+        android:layout_marginRight="20dp"
+        app:layout_constraintEnd_toStartOf="@+id/cell21"
         app:layout_constraintTop_toBottomOf="@+id/cell27"
         app:srcCompat="@drawable/snake" />
 
@@ -428,7 +361,9 @@
         android:id="@+id/cell21"
         android:layout_width="33dp"
         android:layout_height="35dp"
-        app:layout_constraintStart_toEndOf="@+id/smallGrid"
+        android:layout_marginEnd="31dp"
+        android:layout_marginRight="31dp"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/cell28"
         app:srcCompat="@drawable/snake" />
 
@@ -436,10 +371,12 @@
         android:id="@+id/cell22"
         android:layout_width="33dp"
         android:layout_height="35dp"
-        android:layout_marginTop="9dp"
-        android:layout_marginEnd="8dp"
-        android:layout_marginRight="8dp"
-        app:layout_constraintEnd_toStartOf="@+id/smallGrid"
+        android:layout_marginStart="26dp"
+        android:layout_marginLeft="26dp"
+        android:layout_marginEnd="23dp"
+        android:layout_marginRight="23dp"
+        app:layout_constraintEnd_toStartOf="@+id/cell23"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/cell29"
         app:srcCompat="@drawable/snake" />
 
@@ -447,12 +384,9 @@
         android:id="@+id/cell23"
         android:layout_width="33dp"
         android:layout_height="35dp"
-        android:layout_marginTop="8dp"
-        android:layout_marginEnd="21dp"
-        android:layout_marginRight="21dp"
-        app:layout_constraintEnd_toStartOf="@+id/bigGrid"
-        app:layout_constraintHorizontal_bias="0.685"
-        app:layout_constraintStart_toEndOf="@+id/smallGrid"
+        android:layout_marginEnd="16dp"
+        android:layout_marginRight="16dp"
+        app:layout_constraintEnd_toStartOf="@+id/cell24"
         app:layout_constraintTop_toBottomOf="@+id/cell30"
         app:srcCompat="@drawable/snake" />
 
@@ -460,10 +394,9 @@
         android:id="@+id/cell24"
         android:layout_width="33dp"
         android:layout_height="35dp"
-        android:layout_marginStart="18dp"
-        android:layout_marginLeft="18dp"
-        android:layout_marginTop="9dp"
-        app:layout_constraintStart_toEndOf="@+id/cell23"
+        android:layout_marginEnd="23dp"
+        android:layout_marginRight="23dp"
+        app:layout_constraintEnd_toStartOf="@+id/cell25"
         app:layout_constraintTop_toBottomOf="@+id/cell31"
         app:srcCompat="@drawable/snake" />
 
@@ -471,10 +404,9 @@
         android:id="@+id/cell25"
         android:layout_width="33dp"
         android:layout_height="35dp"
-        android:layout_marginStart="22dp"
-        android:layout_marginLeft="22dp"
-        android:layout_marginTop="9dp"
-        app:layout_constraintStart_toEndOf="@+id/cell24"
+        android:layout_marginEnd="18dp"
+        android:layout_marginRight="18dp"
+        app:layout_constraintEnd_toStartOf="@+id/cell26"
         app:layout_constraintTop_toBottomOf="@+id/cell32"
         app:srcCompat="@drawable/snake" />
 
@@ -482,10 +414,9 @@
         android:id="@+id/cell26"
         android:layout_width="33dp"
         android:layout_height="35dp"
-        android:layout_marginStart="26dp"
-        android:layout_marginLeft="26dp"
-        android:layout_marginTop="9dp"
-        app:layout_constraintStart_toEndOf="@+id/cell25"
+        android:layout_marginEnd="23dp"
+        android:layout_marginRight="23dp"
+        app:layout_constraintEnd_toStartOf="@+id/cell27"
         app:layout_constraintTop_toBottomOf="@+id/cell33"
         app:srcCompat="@drawable/snake" />
 
@@ -493,10 +424,9 @@
         android:id="@+id/cell27"
         android:layout_width="33dp"
         android:layout_height="35dp"
-        android:layout_marginStart="13dp"
-        android:layout_marginLeft="13dp"
-        android:layout_marginTop="9dp"
-        app:layout_constraintStart_toEndOf="@+id/cell26"
+        android:layout_marginEnd="20dp"
+        android:layout_marginRight="20dp"
+        app:layout_constraintEnd_toStartOf="@+id/cell28"
         app:layout_constraintTop_toBottomOf="@+id/cell34"
         app:srcCompat="@drawable/snake" />
 
@@ -504,8 +434,9 @@
         android:id="@+id/cell28"
         android:layout_width="33dp"
         android:layout_height="35dp"
-        android:layout_marginTop="9dp"
-        app:layout_constraintStart_toEndOf="@+id/smallGrid"
+        android:layout_marginEnd="31dp"
+        android:layout_marginRight="31dp"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/cell35"
         app:srcCompat="@drawable/snake" />
 
@@ -513,9 +444,12 @@
         android:id="@+id/cell29"
         android:layout_width="33dp"
         android:layout_height="35dp"
-        android:layout_marginEnd="8dp"
-        android:layout_marginRight="8dp"
-        app:layout_constraintEnd_toStartOf="@+id/smallGrid"
+        android:layout_marginStart="26dp"
+        android:layout_marginLeft="26dp"
+        android:layout_marginEnd="23dp"
+        android:layout_marginRight="23dp"
+        app:layout_constraintEnd_toStartOf="@+id/cell30"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/cell36"
         app:srcCompat="@drawable/snake" />
 
@@ -523,13 +457,9 @@
         android:id="@+id/cell30"
         android:layout_width="33dp"
         android:layout_height="35dp"
-        android:layout_marginStart="15dp"
-        android:layout_marginLeft="15dp"
-        android:layout_marginEnd="6dp"
-        android:layout_marginRight="6dp"
-        app:layout_constraintEnd_toStartOf="@+id/bigGrid"
-        app:layout_constraintHorizontal_bias="0.732"
-        app:layout_constraintStart_toEndOf="@+id/smallGrid"
+        android:layout_marginEnd="16dp"
+        android:layout_marginRight="16dp"
+        app:layout_constraintEnd_toStartOf="@+id/cell31"
         app:layout_constraintTop_toBottomOf="@+id/cell37"
         app:srcCompat="@drawable/snake" />
 
@@ -537,9 +467,9 @@
         android:id="@+id/cell31"
         android:layout_width="33dp"
         android:layout_height="35dp"
-        android:layout_marginStart="21dp"
-        android:layout_marginLeft="21dp"
-        app:layout_constraintStart_toEndOf="@+id/cell30"
+        android:layout_marginEnd="23dp"
+        android:layout_marginRight="23dp"
+        app:layout_constraintEnd_toStartOf="@+id/cell32"
         app:layout_constraintTop_toBottomOf="@+id/cell38"
         app:srcCompat="@drawable/snake" />
 
@@ -547,9 +477,9 @@
         android:id="@+id/cell32"
         android:layout_width="33dp"
         android:layout_height="35dp"
-        android:layout_marginStart="22dp"
-        android:layout_marginLeft="22dp"
-        app:layout_constraintStart_toEndOf="@+id/cell31"
+        android:layout_marginEnd="18dp"
+        android:layout_marginRight="18dp"
+        app:layout_constraintEnd_toStartOf="@+id/cell33"
         app:layout_constraintTop_toBottomOf="@+id/cell39"
         app:srcCompat="@drawable/snake" />
 
@@ -557,9 +487,9 @@
         android:id="@+id/cell33"
         android:layout_width="33dp"
         android:layout_height="35dp"
-        android:layout_marginStart="26dp"
-        android:layout_marginLeft="26dp"
-        app:layout_constraintStart_toEndOf="@+id/cell32"
+        android:layout_marginEnd="23dp"
+        android:layout_marginRight="23dp"
+        app:layout_constraintEnd_toStartOf="@+id/cell34"
         app:layout_constraintTop_toBottomOf="@+id/cell40"
         app:srcCompat="@drawable/snake" />
 
@@ -567,9 +497,9 @@
         android:id="@+id/cell34"
         android:layout_width="33dp"
         android:layout_height="35dp"
-        android:layout_marginStart="13dp"
-        android:layout_marginLeft="13dp"
-        app:layout_constraintStart_toEndOf="@+id/cell33"
+        android:layout_marginEnd="20dp"
+        android:layout_marginRight="20dp"
+        app:layout_constraintEnd_toStartOf="@+id/cell35"
         app:layout_constraintTop_toBottomOf="@+id/cell41"
         app:srcCompat="@drawable/snake" />
 
@@ -577,7 +507,9 @@
         android:id="@+id/cell35"
         android:layout_width="33dp"
         android:layout_height="35dp"
-        app:layout_constraintStart_toEndOf="@+id/smallGrid"
+        android:layout_marginEnd="31dp"
+        android:layout_marginRight="31dp"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/cell42"
         app:srcCompat="@drawable/snake" />
 
@@ -585,10 +517,12 @@
         android:id="@+id/cell36"
         android:layout_width="33dp"
         android:layout_height="35dp"
-        android:layout_marginTop="9dp"
-        android:layout_marginEnd="8dp"
-        android:layout_marginRight="8dp"
-        app:layout_constraintEnd_toStartOf="@+id/smallGrid"
+        android:layout_marginStart="26dp"
+        android:layout_marginLeft="26dp"
+        android:layout_marginEnd="23dp"
+        android:layout_marginRight="23dp"
+        app:layout_constraintEnd_toStartOf="@+id/cell37"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/cell43"
         app:srcCompat="@drawable/snake" />
 
@@ -596,136 +530,140 @@
         android:id="@+id/cell37"
         android:layout_width="33dp"
         android:layout_height="35dp"
-        android:layout_marginStart="15dp"
-        android:layout_marginLeft="15dp"
-        android:layout_marginTop="8dp"
-        android:layout_marginEnd="6dp"
-        android:layout_marginRight="6dp"
-        app:layout_constraintEnd_toStartOf="@+id/bigGrid"
-        app:layout_constraintHorizontal_bias="0.732"
-        app:layout_constraintStart_toEndOf="@+id/smallGrid"
-        app:layout_constraintTop_toBottomOf="@+id/imageView47"
+        android:layout_marginEnd="16dp"
+        android:layout_marginRight="16dp"
+        app:layout_constraintEnd_toStartOf="@+id/cell38"
+        app:layout_constraintTop_toBottomOf="@+id/cell44"
         app:srcCompat="@drawable/snake" />
 
     <ImageView
         android:id="@+id/cell38"
         android:layout_width="33dp"
         android:layout_height="35dp"
-        android:layout_marginStart="16dp"
-        android:layout_marginLeft="16dp"
-        android:layout_marginTop="8dp"
-        android:layout_marginEnd="5dp"
-        android:layout_marginRight="5dp"
-        app:layout_constraintEnd_toStartOf="@+id/bigGrid"
-        app:layout_constraintHorizontal_bias="0.597"
-        app:layout_constraintStart_toEndOf="@+id/smallGrid"
-        app:layout_constraintTop_toBottomOf="@+id/imageView48"
+        android:layout_marginEnd="23dp"
+        android:layout_marginRight="23dp"
+        app:layout_constraintEnd_toStartOf="@+id/cell39"
+        app:layout_constraintTop_toBottomOf="@+id/cell45"
         app:srcCompat="@drawable/snake" />
 
     <ImageView
         android:id="@+id/cell39"
         android:layout_width="33dp"
         android:layout_height="35dp"
-        android:layout_marginStart="16dp"
-        android:layout_marginLeft="16dp"
-        android:layout_marginTop="8dp"
-        android:layout_marginEnd="5dp"
-        android:layout_marginRight="5dp"
-        app:layout_constraintEnd_toStartOf="@+id/bigGrid"
-        app:layout_constraintHorizontal_bias="0.449"
-        app:layout_constraintStart_toEndOf="@+id/smallGrid"
-        app:layout_constraintTop_toBottomOf="@+id/cell433"
+        android:layout_marginEnd="18dp"
+        android:layout_marginRight="18dp"
+        app:layout_constraintEnd_toStartOf="@+id/cell40"
+        app:layout_constraintTop_toBottomOf="@+id/cell46"
         app:srcCompat="@drawable/snake" />
 
     <ImageView
         android:id="@+id/cell40"
         android:layout_width="33dp"
         android:layout_height="35dp"
-        android:layout_marginStart="16dp"
-        android:layout_marginLeft="16dp"
-        android:layout_marginTop="8dp"
-        android:layout_marginEnd="5dp"
-        android:layout_marginRight="5dp"
-        app:layout_constraintEnd_toStartOf="@+id/bigGrid"
-        app:layout_constraintHorizontal_bias="0.298"
-        app:layout_constraintStart_toEndOf="@+id/smallGrid"
-        app:layout_constraintTop_toBottomOf="@+id/imageView50"
+        android:layout_marginEnd="23dp"
+        android:layout_marginRight="23dp"
+        app:layout_constraintEnd_toStartOf="@+id/cell41"
+        app:layout_constraintTop_toBottomOf="@+id/cell47"
         app:srcCompat="@drawable/snake" />
 
     <ImageView
         android:id="@+id/cell41"
         android:layout_width="33dp"
         android:layout_height="35dp"
-        android:layout_marginStart="13dp"
-        android:layout_marginLeft="13dp"
-        android:layout_marginTop="9dp"
-        app:layout_constraintStart_toEndOf="@+id/cell40"
-        app:layout_constraintTop_toBottomOf="@+id/imageView51"
+        android:layout_marginEnd="20dp"
+        android:layout_marginRight="20dp"
+        app:layout_constraintEnd_toStartOf="@+id/cell42"
+        app:layout_constraintTop_toBottomOf="@+id/cell48"
         app:srcCompat="@drawable/snake" />
 
     <ImageView
         android:id="@+id/cell42"
         android:layout_width="33dp"
         android:layout_height="35dp"
-        android:layout_marginTop="9dp"
-        app:layout_constraintStart_toEndOf="@+id/smallGrid"
-        app:layout_constraintTop_toBottomOf="@+id/imageView52"
+        android:layout_marginEnd="31dp"
+        android:layout_marginRight="31dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/cell49"
         app:srcCompat="@drawable/snake" />
 
     <ImageView
         android:id="@+id/cell43"
         android:layout_width="33dp"
         android:layout_height="35dp"
-        app:srcCompat="@drawable/snake"
-        tools:layout_editor_absoluteX="26dp"
-        tools:layout_editor_absoluteY="160dp" />
+        android:layout_marginStart="26dp"
+        android:layout_marginLeft="26dp"
+        android:layout_marginTop="93dp"
+        android:layout_marginEnd="23dp"
+        android:layout_marginRight="23dp"
+        app:layout_constraintEnd_toStartOf="@+id/cell44"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/mode"
+        app:srcCompat="@drawable/snake" />
 
     <ImageView
-        android:id="@+id/imageView47"
+        android:id="@+id/cell44"
         android:layout_width="33dp"
         android:layout_height="35dp"
-        app:srcCompat="@drawable/snake"
-        tools:layout_editor_absoluteX="82dp"
-        tools:layout_editor_absoluteY="160dp" />
+        android:layout_marginTop="93dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginRight="16dp"
+        app:layout_constraintEnd_toStartOf="@+id/cell45"
+        app:layout_constraintTop_toBottomOf="@+id/mode"
+        app:srcCompat="@drawable/snake" />
 
     <ImageView
-        android:id="@+id/imageView48"
+        android:id="@+id/cell45"
         android:layout_width="33dp"
         android:layout_height="35dp"
-        app:srcCompat="@drawable/snake"
-        tools:layout_editor_absoluteX="134dp"
-        tools:layout_editor_absoluteY="160dp" />
+        android:layout_marginTop="126dp"
+        android:layout_marginEnd="23dp"
+        android:layout_marginRight="23dp"
+        app:layout_constraintEnd_toStartOf="@+id/cell46"
+        app:layout_constraintTop_toBottomOf="@+id/updateScore"
+        app:srcCompat="@drawable/snake" />
 
     <ImageView
-        android:id="@+id/cell433"
+        android:id="@+id/cell46"
         android:layout_width="33dp"
         android:layout_height="35dp"
-        app:srcCompat="@drawable/snake"
-        tools:layout_editor_absoluteX="189dp"
-        tools:layout_editor_absoluteY="160dp" />
+        android:layout_marginTop="126dp"
+        android:layout_marginEnd="18dp"
+        android:layout_marginRight="18dp"
+        app:layout_constraintEnd_toStartOf="@+id/cell47"
+        app:layout_constraintTop_toBottomOf="@+id/updateScore"
+        app:srcCompat="@drawable/snake" />
 
     <ImageView
-        android:id="@+id/imageView50"
+        android:id="@+id/cell47"
         android:layout_width="33dp"
         android:layout_height="35dp"
-        app:srcCompat="@drawable/snake"
-        tools:layout_editor_absoluteX="249dp"
-        tools:layout_editor_absoluteY="160dp" />
+        android:layout_marginTop="192dp"
+        android:layout_marginEnd="23dp"
+        android:layout_marginRight="23dp"
+        app:layout_constraintEnd_toStartOf="@+id/cell48"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/snake" />
 
     <ImageView
-        android:id="@+id/imageView51"
+        android:id="@+id/cell48"
         android:layout_width="33dp"
         android:layout_height="35dp"
-        app:srcCompat="@drawable/snake"
-        tools:layout_editor_absoluteX="295dp"
-        tools:layout_editor_absoluteY="160dp" />
+        android:layout_marginTop="125dp"
+        android:layout_marginEnd="20dp"
+        android:layout_marginRight="20dp"
+        app:layout_constraintEnd_toStartOf="@+id/cell49"
+        app:layout_constraintTop_toBottomOf="@+id/pauseButton"
+        app:srcCompat="@drawable/snake" />
 
     <ImageView
-        android:id="@+id/imageView52"
+        android:id="@+id/cell49"
         android:layout_width="33dp"
         android:layout_height="35dp"
-        app:srcCompat="@drawable/snake"
-        tools:layout_editor_absoluteX="347dp"
-        tools:layout_editor_absoluteY="160dp" />
+        android:layout_marginTop="124dp"
+        android:layout_marginEnd="31dp"
+        android:layout_marginRight="31dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/endButton"
+        app:srcCompat="@drawable/snake" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
