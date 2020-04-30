@@ -82,6 +82,7 @@ public class NewGameActivity extends AppCompatActivity {
 
         scoreText = findViewById(R.id.updateScore);
         scoreText.setText("0");
+
         ImageButton pauseButton = findViewById(R.id.pauseButton);
         pauseButton.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -91,6 +92,7 @@ public class NewGameActivity extends AppCompatActivity {
         });
         TextView pauseText = findViewById(R.id.paused);
         pauseText.setVisibility(VISIBLE);
+
         ImageButton quitButton = findViewById(R.id.endButton);
         quitButton.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -98,6 +100,7 @@ public class NewGameActivity extends AppCompatActivity {
                 quitCheck();
             }
         });
+        
         Button upButton = findViewById(R.id.upButton);
         upButton.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -165,7 +168,7 @@ public class NewGameActivity extends AppCompatActivity {
         builder.setPositiveButton("Yes", new DialogInterface.OnClickListener() {
             @Override
             public void onClick(DialogInterface dialogInterface, int i) {
-
+                endGame();
             }
         });
         builder.create().show();
@@ -177,7 +180,12 @@ public class NewGameActivity extends AppCompatActivity {
     private DialogInterface.OnClickListener endGame() {
         AlertDialog.Builder builder = new AlertDialog.Builder(this);
         builder.setMessage("Game Over. Score: " + score);
-        builder.setNegativeButton("End Game", mainMenu());
+        builder.setPositiveButton("Done", new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialogInterface, int i) {
+                mainMenu();
+            }
+        });
         builder.create().show();
         return null;
     }
@@ -284,7 +292,7 @@ public class NewGameActivity extends AppCompatActivity {
             gameState = GameStateID.RUNNING;
             TextView pauseText = findViewById(R.id.paused);
             pauseText.setVisibility(View.INVISIBLE);
-            //timer = new Timer();
+            //timer = new Timer("timer");
             //timer.schedule(new runMove(), InitialPositions.moveDelay, InitialPositions.moveDelay);
         } else if (gameState == GameStateID.RUNNING) {
             gameState = GameStateID.PAUSED;
