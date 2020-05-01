@@ -310,7 +310,7 @@ public class NewGameActivity extends AppCompatActivity {
                     move(facing);
                 }
             };
-            timer.schedule(task, InitialPositions.moveDelay, InitialPositions.moveDelay);
+            timer.scheduleAtFixedRate(task, InitialPositions.moveDelay, InitialPositions.moveDelay);
         } else if (gameState == GameStateID.RUNNING) {
             gameState = GameStateID.PAUSED;
             TextView pauseText = findViewById(R.id.paused);
