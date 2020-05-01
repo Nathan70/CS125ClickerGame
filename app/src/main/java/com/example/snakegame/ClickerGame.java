@@ -16,12 +16,22 @@ public class ClickerGame extends AppCompatActivity {
     /**
      * something
      */
-    TextView scoreText;
+    private TextView scoreText;
 
     /**
      * score
      */
     private int score;
+
+    /**
+     *
+     */
+    private int multiplier;
+
+    /**
+     * something
+     */
+    private TextView multiplierText;
 
 
     @Override
@@ -29,6 +39,8 @@ public class ClickerGame extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_clicker_game);
 
+        multiplier = 1;
+        score = 0;
         scoreText = findViewById(R.id.updateScore);
         scoreText.setText("0");
 
@@ -40,11 +52,19 @@ public class ClickerGame extends AppCompatActivity {
             }
         });
 
-        Button rightButton = findViewById(R.id.rightButton);
-        rightButton.setOnClickListener(new View.OnClickListener() {
+        Button cookie = findViewById(R.id.rightButton);
+        cookie.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 click();
+            }
+        });
+
+        Button multiplierButton = findViewById(R.id.leftButton);
+        multiplierButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                multiplier();
             }
         });
     }
@@ -94,7 +114,15 @@ public class ClickerGame extends AppCompatActivity {
      *
      */
     private void click() {
-        score++;
+        score = score + (multiplier);
         scoreText.setText(String.valueOf(score));
+    }
+
+    private void multiplier() {
+        if (score < (100 * multiplier)) {
+            return;
+        }
+        score -= (100 * multiplier);
+        multiplier++;
     }
 }
