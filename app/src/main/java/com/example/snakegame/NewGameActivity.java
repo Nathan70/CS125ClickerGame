@@ -257,6 +257,7 @@ public class NewGameActivity extends AppCompatActivity {
         for (int i = 0; i < path.size(); i++) {
             if (point[0] == path.get(i)[0] && point[1] == path.get(i)[1]) {
                 eat();
+                return;
             }
         }
         targetPosition = point;
