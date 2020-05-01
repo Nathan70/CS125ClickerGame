@@ -91,8 +91,6 @@ public class NewGameActivity extends AppCompatActivity {
                 togglePause();
             }
         });
-        TextView pauseText = findViewById(R.id.paused);
-        pauseText.setVisibility(View.INVISIBLE);
 
         ImageButton quitButton = findViewById(R.id.endButton);
         quitButton.setOnClickListener(new View.OnClickListener() {
@@ -142,10 +140,6 @@ public class NewGameActivity extends AppCompatActivity {
             path.add(InitialPositions.bigThird);
             targetPosition = InitialPositions.bigGoal;
 
-            ImageView bigGrid = findViewById(R.id.bigGrid);
-            bigGrid.setVisibility(VISIBLE);
-            ImageView smallGrid = findViewById(R.id.smallGrid);
-            smallGrid.setVisibility(View.INVISIBLE);
             //render positions of snake, grid, etc on ui
         } else {
             range = InitialPositions.smallRange;
@@ -154,10 +148,6 @@ public class NewGameActivity extends AppCompatActivity {
             path.add(InitialPositions.smallThird);
             targetPosition = InitialPositions.smallGoal;
 
-            ImageView bigGrid = findViewById(R.id.bigGrid);
-            bigGrid.setVisibility(View.INVISIBLE);
-            ImageView smallGrid = findViewById(R.id.smallGrid);
-            smallGrid.setVisibility(VISIBLE);
             //render positions of snake, grid, etc on ui
         }
     }
@@ -301,8 +291,6 @@ public class NewGameActivity extends AppCompatActivity {
     public void togglePause() {
         if (gameState == GameStateID.PAUSED) {
             gameState = GameStateID.RUNNING;
-            TextView pauseText = findViewById(R.id.paused);
-            pauseText.setVisibility(View.INVISIBLE);
             timer = new Timer();
             TimerTask task = new TimerTask() {
                 @Override
@@ -313,8 +301,6 @@ public class NewGameActivity extends AppCompatActivity {
             timer.scheduleAtFixedRate(task, InitialPositions.moveDelay, InitialPositions.moveDelay);
         } else if (gameState == GameStateID.RUNNING) {
             gameState = GameStateID.PAUSED;
-            TextView pauseText = findViewById(R.id.paused);
-            pauseText.setVisibility(VISIBLE);
             timer.purge();
         }
     }
