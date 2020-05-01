@@ -124,5 +124,6 @@ public class ClickerGame extends AppCompatActivity {
         }
         score -= (100 * multiplier);
         multiplier++;
+        multiplierText.setText(String.valueOf(multiplier));
     }
 }
