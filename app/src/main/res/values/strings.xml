@@ -14,4 +14,15 @@
     <string name="mode_big">Mode: Big</string>
     <string name="biggrid">bigGrid</string>
     <string name="smallgrid">smallGrid</string>
+    <string name="multiplier">Multiplier:</string>
+    <string name="defaultMultiplier">1</string>
+    <string name="mainclickerbutton">mainClickerButton</string>
+    <string name="multiplier_upgrade">Multiplier Upgrade</string>
+    <string name="defaultCost">100</string>
+    <string name="gold">Gold:</string>
+    <string name="costText">Cost:</string>
+    <string name="moonclicker">moonClicker</string>
+    <string name="astronautimage">astronautImage</string>
+    <string name="add_moon">Add Moon!</string>
+    <string name="addAstronaut">Add Astronaut!</string>
 </resources>
