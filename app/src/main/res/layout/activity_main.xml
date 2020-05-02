@@ -12,23 +12,19 @@
         android:id="@+id/mainTitle"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="176dp"
-        android:layout_marginLeft="176dp"
-        android:layout_marginTop="43dp"
-        android:layout_marginEnd="156dp"
-        android:layout_marginRight="156dp"
-        android:layout_marginBottom="669dp"
+        android:layout_marginBottom="38dp"
         android:gravity="center"
-        android:text="@string/snake_game"
+        android:text="@string/space_clicker_game"
         android:textColor="#f58742"
         android:textSize="100sp"
-        app:fontFamily="sans-serif-smallcaps"
+        android:textStyle="normal"
+        app:fontFamily="@font/caesar_dressing"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.53"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.008" />
+        app:layout_constraintVertical_bias="0.051" />
 
     <Button
         android:id="@+id/playButton"
@@ -36,7 +32,7 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="161dp"
         android:layout_marginLeft="161dp"
-        android:layout_marginTop="120dp"
+        android:layout_marginTop="468dp"
         android:layout_marginEnd="162dp"
         android:layout_marginRight="162dp"
         android:background="#FFFFFF"
@@ -44,18 +40,19 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/mainTitle" />
+        app:layout_constraintTop_toTopOf="parent" />
 
     <ImageView
-        android:id="@+id/snake_img"
+        android:id="@+id/main_img"
         android:layout_width="277dp"
         android:layout_height="295dp"
-        android:contentDescription="@string/snake_game"
+        android:layout_marginBottom="16dp"
+        android:contentDescription="mainImage1"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/mainTitle"
-        app:layout_constraintVertical_bias="0.0"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.823"
         app:srcCompat="@drawable/snake_main" />
 
     <Switch

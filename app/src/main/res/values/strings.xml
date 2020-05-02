@@ -1,6 +1,5 @@
 <resources>
-    <string name="app_name">Snake Game</string>
-    <string name="snake_game">Snake Game</string>
+    <string name="app_name">Clicker Game</string>
     <string name="play">Play</string>
     <string name="score">Score:</string>
     <string name="big">Big</string>
@@ -24,4 +23,5 @@
     <string name="add_moon">Add Moon!</string>
     <string name="defaultMoon">1</string>
     <string name="moonText">Moon:</string>
+    <string name="space_clicker_game">Space Clicker Game</string>
 </resources>
