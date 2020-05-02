@@ -85,12 +85,11 @@ public class ClickerGame extends AppCompatActivity {
             }
         });
 
-        /** add rotation animation to earth button */
-        earthButton = findViewById(R.id.earthClicker);
+        // add rotation animation to earth button
         rotate = AnimationUtils.loadAnimation(ClickerGame.this, R.anim.rotation);
         earthButton.startAnimation(rotate);
 
-        /** add rotation animation to moon button when clicked */
+        // add rotation animation to moon button when clicked
         moonButton = findViewById(R.id.moonClicker);
         moonButton.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -99,7 +98,7 @@ public class ClickerGame extends AppCompatActivity {
             }
         });
 
-        /** add rotation to astronauts */
+        // add rotation to astronauts
         a1 = findViewById(R.id.astronaut1);
         a2 = findViewById(R.id.astronaut2);
         a1.startAnimation(rotate);
