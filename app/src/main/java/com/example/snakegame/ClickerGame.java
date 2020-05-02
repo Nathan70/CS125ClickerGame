@@ -29,6 +29,11 @@ public class ClickerGame extends AppCompatActivity {
     private int multiplier;
 
     /**
+     *
+     */
+    private int itemsBought;
+
+    /**
      * something
      */
     private TextView multiplierText;
@@ -65,6 +70,14 @@ public class ClickerGame extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 multiplier();
+            }
+        });
+
+        Button buyButton = findViewById(R.id.upButton);
+        buyButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                buy();
             }
         });
     }
@@ -125,5 +138,13 @@ public class ClickerGame extends AppCompatActivity {
         score -= (100 * multiplier);
         multiplier++;
         multiplierText.setText(String.valueOf(multiplier));
+    }
+
+    private void buy() {
+        if (score < (100 * itemsBought)) {
+            return;
+        }
+        score -= 100 * itemsBought;
+        itemsBought++;
     }
 }
