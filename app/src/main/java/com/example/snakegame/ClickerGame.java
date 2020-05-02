@@ -42,7 +42,9 @@ public class ClickerGame extends AppCompatActivity {
         multiplier = 1;
         score = 0;
         scoreText = findViewById(R.id.updateClickerScore);
-        //scoreText.setText("0");
+        scoreText.setText("0");
+        multiplierText = findViewById(R.id.updateMultiplier);
+        multiplierText.setText("1");
 
         ImageButton quitButton = findViewById(R.id.quitClicker);
         quitButton.setOnClickListener(new View.OnClickListener() {
