@@ -37,7 +37,7 @@ public class ClickerGame extends AppCompatActivity {
 
     /** moon clicker button */
     private ImageButton moonButton;
-    
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
