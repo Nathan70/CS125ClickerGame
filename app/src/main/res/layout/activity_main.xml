@@ -6,7 +6,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="#2767BD"
-    tools:context=".MainActivity">
+    tools:context="com.example.clickergame.MainActivity">
 
     <TextView
         android:id="@+id/mainTitle"

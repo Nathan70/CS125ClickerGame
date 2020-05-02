@@ -1,4 +1,4 @@
-package com.example.snakegame;
+package com.example.clickergame;
 
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
@@ -14,40 +14,31 @@ import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import com.example.snakegame.R;
+
 public class ClickerGame extends AppCompatActivity {
 
-    /**
-     * something
-     */
+    /** something */
     private TextView scoreText;
 
-    /**
-     * score
-     */
+    /** score*/
     private int score;
 
-    /**
-     *
-     */
+    /** something */
     private int multiplier;
 
-    /**
-     * something
-     */
+    /** something */
     private TextView multiplierText;
 
     /** earth clicker button */
-    ImageButton earthButton;
+    private int moon;
 
-    /** earth rotation animation */
-    Animation rotate;
+    /** something */
+    private TextView moonText;
 
     /** moon clicker button */
-    ImageButton moonButton;
+    private ImageButton moonButton;
 
-    /** astronaut images */
-    ImageView a1;
-    ImageView a2;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -56,10 +47,10 @@ public class ClickerGame extends AppCompatActivity {
 
         multiplier = 1;
         score = 0;
+        moon = 1;
         scoreText = findViewById(R.id.updateClickerScore);
-        scoreText.setText("0");
         multiplierText = findViewById(R.id.updateMultiplier);
-        multiplierText.setText("1");
+        moonText = findViewById(R.id.updateMoon);
 
         ImageButton quitButton = findViewById(R.id.quitClicker);
         quitButton.setOnClickListener(new View.OnClickListener() {
@@ -69,8 +60,8 @@ public class ClickerGame extends AppCompatActivity {
             }
         });
 
-        ImageButton cookie = findViewById(R.id.earthClicker);
-        cookie.setOnClickListener(new View.OnClickListener() {
+        ImageButton earthButton = findViewById(R.id.earthClicker);
+        earthButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 click();
@@ -85,9 +76,16 @@ public class ClickerGame extends AppCompatActivity {
             }
         });
 
+        Button addMoonButton = findViewById(R.id.addMoon);
+        addMoonButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                addMoon();
+            }
+        });
+
         // add rotation animation to earth button
-        rotate = AnimationUtils.loadAnimation(ClickerGame.this, R.anim.rotation);
-        earthButton.startAnimation(rotate);
+        Animation rotate = AnimationUtils.loadAnimation(ClickerGame.this, R.anim.rotation);
 
         // add rotation animation to moon button when clicked
         moonButton = findViewById(R.id.moonClicker);
@@ -99,8 +97,9 @@ public class ClickerGame extends AppCompatActivity {
         });
 
         // add rotation to astronauts
-        a1 = findViewById(R.id.astronaut1);
-        a2 = findViewById(R.id.astronaut2);
+
+        ImageView a1 = findViewById(R.id.astronaut1);
+        ImageView a2 = findViewById(R.id.astronaut2);
         a1.startAnimation(rotate);
         a2.startAnimation(rotate);
     }
@@ -161,6 +160,16 @@ public class ClickerGame extends AppCompatActivity {
         score -= (100 * multiplier);
         multiplier++;
         multiplierText.setText(String.valueOf(multiplier));
+        scoreText.setText(String.valueOf(score));
+    }
+
+    private void addMoon() {
+        if (score < (100 * moon)) {
+            return;
+        }
+        score -= (100 * moon);
+        moon++;
+        moonText.setText(String.valueOf(moon));
         scoreText.setText(String.valueOf(score));
     }
 }
