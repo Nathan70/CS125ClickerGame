@@ -11,9 +11,6 @@ import android.widget.Button;
 import android.widget.ImageButton;
 import android.widget.TextView;
 
-import java.util.Timer;
-import java.util.TimerTask;
-
 public class ClickerGame extends AppCompatActivity {
 
     /**
@@ -32,24 +29,10 @@ public class ClickerGame extends AppCompatActivity {
     private int multiplier;
 
     /**
-     *
-     */
-    private int itemsBought;
-
-    /**
      * something
      */
     private TextView multiplierText;
 
-    /**
-     * something
-     */
-    private TextView itemsText;
-
-    /**
-     *
-     */
-    private Timer timer;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -58,7 +41,6 @@ public class ClickerGame extends AppCompatActivity {
 
         multiplier = 1;
         score = 0;
-        itemsBought = 0;
         scoreText = findViewById(R.id.updateScore);
         scoreText.setText("0");
 
@@ -85,16 +67,6 @@ public class ClickerGame extends AppCompatActivity {
                 multiplier();
             }
         });
-
-        Button buyButton = findViewById(R.id.upButton);
-        buyButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                buy();
-            }
-        });
-
-        timer = new Timer();
     }
 
     /**
@@ -111,12 +83,6 @@ public class ClickerGame extends AppCompatActivity {
             }
         });
         builder.create().show();
-    }
-
-    public class Task extends TimerTask {
-        public void run() {
-            score++;
-        }
     }
 
     /**
@@ -159,15 +125,5 @@ public class ClickerGame extends AppCompatActivity {
         score -= (100 * multiplier);
         multiplier++;
         multiplierText.setText(String.valueOf(multiplier));
-    }
-
-    private void buy() {
-        if (score < (100 * itemsBought)) {
-            return;
-        }
-        score -= 100 * itemsBought;
-        itemsBought++;
-        timer.purge();
-        timer.scheduleAtFixedRate(new Task(), 1000 / itemsBought, 1000 / itemsBought);
     }
 }

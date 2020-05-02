@@ -29,7 +29,7 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void openGameActivity() {
-        startActivity(new Intent(this, NewGameActivity.class));
+        startActivity(new Intent(this, ClickerGame.class));
     }
 
     public static boolean getBig() {
