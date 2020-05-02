@@ -14,6 +14,9 @@ import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import java.util.Timer;
+import java.util.TimerTask;
+
 
 public class ClickerGame extends AppCompatActivity {
 
@@ -44,7 +47,7 @@ public class ClickerGame extends AppCompatActivity {
         setContentView(R.layout.activity_clicker_game);
 
         multiplier = 1;
-        score = 0;
+        score = 100;
         moon = 1;
         scoreText = findViewById(R.id.updateClickerScore);
         multiplierText = findViewById(R.id.updateMultiplier);
@@ -100,6 +103,9 @@ public class ClickerGame extends AppCompatActivity {
         ImageView a2 = findViewById(R.id.astronaut2);
         a1.startAnimation(rotate);
         a2.startAnimation(rotate);
+
+        Timer timer = new Timer();
+        timer.scheduleAtFixedRate(new moonScore(), 1000 / moon, 1000 / moon);
     }
 
     /**
@@ -169,5 +175,12 @@ public class ClickerGame extends AppCompatActivity {
         moon++;
         moonText.setText(String.valueOf(moon));
         scoreText.setText(String.valueOf(score));
+    }
+
+    public class moonScore extends TimerTask {
+        public void run() {
+            score++;
+            scoreText.setText(String.valueOf(score));
+        }
     }
 }
