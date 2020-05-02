@@ -9,8 +9,6 @@ import android.widget.Switch;
 
 public class MainActivity extends AppCompatActivity {
 
-    /** big state */
-    private static boolean big;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -21,8 +19,6 @@ public class MainActivity extends AppCompatActivity {
         findViewById(R.id.playButton).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Switch bigSwitch = findViewById(R.id.bigSwitch);
-                big = bigSwitch.isChecked();
                 openGameActivity();
             }
         });
@@ -32,7 +28,4 @@ public class MainActivity extends AppCompatActivity {
         startActivity(new Intent(this, ClickerGame.class));
     }
 
-    public static boolean getBig() {
-        return big;
-    }
 }
