@@ -88,7 +88,7 @@ public class NewGameActivity extends AppCompatActivity {
         pauseButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                togglePause();
+                //togglePause();
             }
         });
 
@@ -208,9 +208,13 @@ public class NewGameActivity extends AppCompatActivity {
      * hi
      */
     class runMove extends TimerTask {
-
+        //method m;
+        //public runMove(method m){
+           //this.m = m;
+        //}
         @Override
         public void run() {
+            //m()
             move(facing);
         }
     }
@@ -257,6 +261,7 @@ public class NewGameActivity extends AppCompatActivity {
         for (int i = 0; i < path.size(); i++) {
             if (point[0] == path.get(i)[0] && point[1] == path.get(i)[1]) {
                 eat();
+                return;
             }
         }
         targetPosition = point;
@@ -288,17 +293,16 @@ public class NewGameActivity extends AppCompatActivity {
     /**
      * toggle gameState between RUNNING and PAUSED
      */
-    public void togglePause() {
+    public void togglePause() throws InterruptedException {
+        while(gameState == GameStateID.RUNNING){
+
+            Thread.sleep(InitialPositions.moveDelay);
+            move(facing);
+        }
         if (gameState == GameStateID.PAUSED) {
             gameState = GameStateID.RUNNING;
             timer = new Timer();
-            TimerTask task = new TimerTask() {
-                @Override
-                public void run() {
-                    move(facing);
-                }
-            };
-            timer.scheduleAtFixedRate(task, InitialPositions.moveDelay, InitialPositions.moveDelay);
+            //timer.scheduleAtFixedRate(new runMove(move, facing)),1000, 1000);
         } else if (gameState == GameStateID.RUNNING) {
             gameState = GameStateID.PAUSED;
             timer.purge();
