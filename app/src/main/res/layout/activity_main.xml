@@ -44,4 +44,16 @@
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.766" />
 
+    <ImageView
+        android:id="@+id/glowImage"
+        android:layout_width="275dp"
+        android:layout_height="273dp"
+        android:contentDescription="@string/glowImage"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.762"
+        app:srcCompat="@drawable/glow" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>
