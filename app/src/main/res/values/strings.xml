@@ -12,8 +12,6 @@
     <string name="pause">pause</string>
     <string name="end">end</string>
     <string name="mode_big">Mode: Big</string>
-    <string name="biggrid">bigGrid</string>
-    <string name="smallgrid">smallGrid</string>
     <string name="multiplier">Multiplier:</string>
     <string name="defaultMultiplier">1</string>
     <string name="mainclickerbutton">mainClickerButton</string>
@@ -24,5 +22,6 @@
     <string name="moonclicker">moonClicker</string>
     <string name="astronautimage">astronautImage</string>
     <string name="add_moon">Add Moon!</string>
-    <string name="addAstronaut">Add Astronaut!</string>
+    <string name="defaultMoon">1</string>
+    <string name="moonText">Moon:</string>
 </resources>
