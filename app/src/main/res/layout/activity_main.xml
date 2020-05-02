@@ -32,41 +32,16 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="161dp"
         android:layout_marginLeft="161dp"
-        android:layout_marginTop="468dp"
         android:layout_marginEnd="162dp"
         android:layout_marginRight="162dp"
+        android:layout_marginBottom="76dp"
         android:background="#FFFFFF"
         android:text="@string/play"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <ImageView
-        android:id="@+id/main_img"
-        android:layout_width="277dp"
-        android:layout_height="295dp"
-        android:layout_marginBottom="16dp"
-        android:contentDescription="mainImage1"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.823"
-        app:srcCompat="@drawable/snake_main" />
-
-    <Switch
-        android:id="@+id/bigSwitch"
-        android:layout_width="83dp"
-        android:layout_height="33dp"
-        android:layout_marginTop="76dp"
-        android:layout_marginEnd="172dp"
-        android:layout_marginRight="172dp"
-        android:background="#00FFFFFF"
-        android:checked="false"
-        android:text="@string/big"
-        android:textSize="14sp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/playButton" />
+        app:layout_constraintVertical_bias="0.766" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
