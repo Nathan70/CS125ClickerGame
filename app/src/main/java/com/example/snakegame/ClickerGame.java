@@ -41,10 +41,10 @@ public class ClickerGame extends AppCompatActivity {
 
         multiplier = 1;
         score = 0;
-        scoreText = findViewById(R.id.updateScore);
-        scoreText.setText("0");
+        scoreText = findViewById(R.id.updateClickerScore);
+        //scoreText.setText("0");
 
-        ImageButton quitButton = findViewById(R.id.endButton);
+        ImageButton quitButton = findViewById(R.id.quitClicker);
         quitButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -52,7 +52,7 @@ public class ClickerGame extends AppCompatActivity {
             }
         });
 
-        Button cookie = findViewById(R.id.rightButton);
+        ImageButton cookie = findViewById(R.id.earthClicker);
         cookie.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -60,7 +60,7 @@ public class ClickerGame extends AppCompatActivity {
             }
         });
 
-        Button multiplierButton = findViewById(R.id.leftButton);
+        Button multiplierButton = findViewById(R.id.upgradeButton);
         multiplierButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {

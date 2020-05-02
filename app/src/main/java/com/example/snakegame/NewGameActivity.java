@@ -76,7 +76,7 @@ public class NewGameActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_new_game);
         // hi
-        if (MainActivity.getBig()) {
+        if (true) {
             TextView bigText = findViewById(R.id.mode);
             bigText.setVisibility(VISIBLE);
         }
@@ -133,7 +133,7 @@ public class NewGameActivity extends AppCompatActivity {
             }
         });
         gameState = GameStateID.PAUSED;
-        if (MainActivity.getBig()) {
+        if (true) {
             range = InitialPositions.bigRange;
             path.add(InitialPositions.bigFirst);
             path.add(InitialPositions.bigSecond);
