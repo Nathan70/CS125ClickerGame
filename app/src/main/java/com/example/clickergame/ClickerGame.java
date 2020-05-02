@@ -14,7 +14,6 @@ import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.TextView;
 
-import com.example.snakegame.R;
 
 public class ClickerGame extends AppCompatActivity {
 
