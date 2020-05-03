@@ -112,7 +112,7 @@ public class ClickerGame extends AppCompatActivity {
         a2.startAnimation(rotate);
 
         timer = new Timer();
-        timer.scheduleAtFixedRate(new moonScore(), 1000 / moon, 1000 / moon);
+        timer.scheduleAtFixedRate(new moonScore(), 1000, 1000);
     }
 
     /**
@@ -189,15 +189,14 @@ public class ClickerGame extends AppCompatActivity {
     public class moonScore extends TimerTask {
         @Override
         public void run() {
-            score++;
-            totalScore++;
+            score = score + moon;
+            totalScore = totalScore + moon;
             runOnUiThread(new Runnable() {
                 @Override
                 public void run() {
                     scoreText.setText(String.valueOf(score));
                 }
             });
-            //scoreText.setText(String.valueOf(score));
         }
     }
 }
