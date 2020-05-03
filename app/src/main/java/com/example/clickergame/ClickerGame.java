@@ -41,6 +41,9 @@ public class ClickerGame extends AppCompatActivity {
     /** moon clicker button */
     private ImageButton moonButton;
 
+    /** timer */
+    private Timer timer;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -104,7 +107,7 @@ public class ClickerGame extends AppCompatActivity {
         a1.startAnimation(rotate);
         a2.startAnimation(rotate);
 
-        Timer timer = new Timer();
+        timer = new Timer();
         timer.scheduleAtFixedRate(new moonScore(), 1000 / moon, 1000 / moon);
     }
 
@@ -128,6 +131,7 @@ public class ClickerGame extends AppCompatActivity {
      * what happens when you die or after you confirm you want to quit
      */
     private DialogInterface.OnClickListener endGame() {
+        timer.cancel();
         AlertDialog.Builder builder = new AlertDialog.Builder(this);
         builder.setMessage("Game Over. Score: " + score);
         builder.setPositiveButton("Done", new DialogInterface.OnClickListener() {
@@ -178,9 +182,16 @@ public class ClickerGame extends AppCompatActivity {
     }
 
     public class moonScore extends TimerTask {
+        @Override
         public void run() {
             score++;
-            scoreText.setText(String.valueOf(score));
+            runOnUiThread(new Runnable() {
+                @Override
+                public void run() {
+                    scoreText.setText(String.valueOf(score));
+                }
+            });
+            //scoreText.setText(String.valueOf(score));
         }
     }
 }
