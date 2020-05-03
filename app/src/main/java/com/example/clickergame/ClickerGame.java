@@ -26,6 +26,9 @@ public class ClickerGame extends AppCompatActivity {
     /** score*/
     private int score;
 
+    /** score total*/
+    private int totalScore;
+
     /** something */
     private int multiplier;
 
@@ -51,6 +54,7 @@ public class ClickerGame extends AppCompatActivity {
 
         multiplier = 1;
         score = 100;
+        totalScore = score;
         moon = 1;
         scoreText = findViewById(R.id.updateClickerScore);
         multiplierText = findViewById(R.id.updateMultiplier);
@@ -133,7 +137,7 @@ public class ClickerGame extends AppCompatActivity {
     private DialogInterface.OnClickListener endGame() {
         timer.cancel();
         AlertDialog.Builder builder = new AlertDialog.Builder(this);
-        builder.setMessage("Game Over. Score: " + score);
+        builder.setMessage("Game Over. Total Score: " + totalScore);
         builder.setPositiveButton("Done", new DialogInterface.OnClickListener() {
             @Override
             public void onClick(DialogInterface dialogInterface, int i) {
@@ -158,6 +162,7 @@ public class ClickerGame extends AppCompatActivity {
      */
     private void click() {
         score = score + (multiplier);
+        totalScore = totalScore + multiplier;
         scoreText.setText(String.valueOf(score));
     }
 
@@ -185,6 +190,7 @@ public class ClickerGame extends AppCompatActivity {
         @Override
         public void run() {
             score++;
+            totalScore++;
             runOnUiThread(new Runnable() {
                 @Override
                 public void run() {
