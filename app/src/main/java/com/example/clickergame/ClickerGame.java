@@ -41,6 +41,12 @@ public class ClickerGame extends AppCompatActivity {
     /** something */
     private TextView moonText;
 
+    /** something */
+    private TextView multiplierCost;
+
+    /** something */
+    private TextView moonCost;
+
     /** moon clicker button */
     private ImageButton moonButton;
 
@@ -59,6 +65,8 @@ public class ClickerGame extends AppCompatActivity {
         scoreText = findViewById(R.id.updateClickerScore);
         multiplierText = findViewById(R.id.updateMultiplier);
         moonText = findViewById(R.id.updateMoon);
+        multiplierCost = findViewById(R.id.upgradeCost);
+        moonCost = findViewById(R.id.upgradeCost2);
 
         ImageButton quitButton = findViewById(R.id.quitClicker);
         quitButton.setOnClickListener(new View.OnClickListener() {
@@ -174,6 +182,7 @@ public class ClickerGame extends AppCompatActivity {
         multiplier++;
         multiplierText.setText(String.valueOf(multiplier));
         scoreText.setText(String.valueOf(score));
+        multiplierCost.setText(String.valueOf(multiplier * 100));
     }
 
     private void addMoon() {
@@ -195,6 +204,7 @@ public class ClickerGame extends AppCompatActivity {
                 @Override
                 public void run() {
                     scoreText.setText(String.valueOf(score));
+                    moonCost.setText(String.valueOf(moon * 100));
                 }
             });
         }
